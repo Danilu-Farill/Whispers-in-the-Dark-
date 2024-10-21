@@ -1,0 +1,58 @@
+.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+label {
+  font-size: 2em;
+  color: #C869E7;
+}
+
+#email, #password {
+  width: 30%;
+  border: none;
+  border-bottom: 2px solid #661D90;
+  padding: 10px;
+  font-size: em;
+  outline: none;
+  background: transparent;
+  margin-bottom: 10%;
+}
+
+#email:focus, #password:focus{
+  border-bottom: 4px solid #C869E7;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#email::placeholder, #password::placeholder {
+  color: #661D90;
+  text-align: center;
+  font-size: 32px;
+  font-family: "Just Another Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+input {
+  font-size: 28px;
+  font-family: "Just Another Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*
+button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+*/

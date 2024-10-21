@@ -1,0 +1,37 @@
+.container-register{
+  cursor: url(../assets/image_29.png), auto;
+}
+.container-register-button {
+  align-content: center;
+}
+
+.register-button-init {
+  font-family: "Just Another Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #C869E7;
+  font-size: 4em;
+  text-align: center;
+}
+
+.register-button-opc {
+  font-family: "Just Another Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #661D90;
+  font-size: 2em;
+  text-align: center;
+}
+
+.container-register-form {
+  align-items: center;
+}
+
+.register-button-a {
+  color: #661D90;
+}
+
+.buttonHomeLink{
+  text-decoration: none;
+  color: #010020;
+}

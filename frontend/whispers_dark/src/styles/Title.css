@@ -1,0 +1,50 @@
+.titleDarkComponent {
+  font-family: "Just Another Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #A7BA9A;
+  transform: translateX(10px);
+} 
+      
+.titleDarkComponent .letterComponent {
+  position: relative;
+  display: inline-block;
+}
+      
+.titleDarkComponent .letterComponent::before, .titleDarkComponent .letterComponent::after {
+content: "";
+position: absolute;
+width: 2px;
+background: rgba(1, 0, 32, 0.7);
+left: 50%;
+transform: translateX(-50%);
+animation: blood 4s infinite ease-in-out;
+}
+
+.titleDarkComponent .letterComponent::before {
+  height: 10px;
+  top: 50%;
+}
+      
+.titleDarkComponent .letterComponent::after {
+  height: 6px;
+  top: 50%;
+  animation-delay: 0.8s;
+}
+
+@keyframes blood {
+  0% {
+    height: 0;
+    opacity: 1;
+  }
+  50% {
+    height: 30px; /* Ajusta la longitud del goteo */
+    opacity: 0.8;
+  }
+  100% {
+    height: 0;
+    opacity: 0;
+          transform: translateY(50px); /* Ajusta para hacer que la gota baje */
+  }
+}
+    

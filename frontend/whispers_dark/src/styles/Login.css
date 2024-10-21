@@ -1,0 +1,23 @@
+.container-login {
+  cursor: url(../assets/image_29.png), auto;
+}
+
+.loginLink {
+    text-decoration: none;
+    color: #010020;
+}
+
+.login-button-init {
+  font-size: 4em;
+}
+
+.avatar-faceLogin {
+  width: 100px;
+  margin-bottom: 5%;
+}
+
+.titleDark {
+  font-family: "Just Another Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+}

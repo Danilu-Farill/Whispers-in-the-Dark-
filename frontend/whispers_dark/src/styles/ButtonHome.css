@@ -1,0 +1,17 @@
+.container-buttonHome-button {
+  color: #010020;
+  width: 200px;
+  border-radius: 8px;
+  background-color: #0541AF;
+  /* cursor: url(../assets/teeth.png), auto; */
+  margin-bottom: 50px;
+  border: none;
+}
+
+.container-buttonHome-text{
+  font-family: "Just Another Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5rem;
+}
+

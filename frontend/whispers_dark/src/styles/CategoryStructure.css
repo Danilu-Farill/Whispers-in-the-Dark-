@@ -1,0 +1,54 @@
+.container-categories{
+  cursor: url(../assets/image_29.png), auto;
+}
+.container-categories-iconMenu {
+    display: flex;
+    font-size: 3rem;
+    color: #A7BA9A;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    cursor: pointer;
+  }
+.container-categories-iconsOrder {
+  display: flex; /* Flexbox para alinear los íconos horizontalmente */
+  justify-content: space-between; /* Espacio igual entre los íconos */
+    align-items: center; /* Centra los íconos verticalmente */
+    font-size: 3rem; /* Ajusta el tamaño de los íconos */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    padding: 10px; /* Añade un poco de espacio alrededor de los íconos */
+    /* border: 1px solid #000; */
+  }
+  
+.container-categories-iconsOrder > div {
+  display: flex;
+  align-items: center;
+  margin: 0 10px; /* Espaciado entre íconos */
+  position: relative; /* Necesario para agregar la línea divisoria */
+}
+  
+.container-categories-iconsOrder > div:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -15px; /* Ajusta la posición de la línea */
+  height: 100%; /* Altura de la línea */
+  width: 2px; /* Grosor de la línea */
+  background-color: #1F3F58; /* Color de la línea */
+}
+    
+    /* Estilo para los íconos */
+.iconArrow, .iconFilter, .iconSearch {
+  color: #A7BA9A;
+  display: flex;
+  align-items: center;
+  font-size: 2rem; /* Ajusta el tamaño de los íconos si es necesario */
+  cursor: pointer;  
+}
+  
+.iconArrowText, .iconFilterText{
+  margin-right: 10px;
+}
+
+#iconSearch {
+  color: #A7BA9A;
+  text-decoration: none;
+}

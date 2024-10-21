@@ -1,0 +1,38 @@
+.container-principal {
+  font-family: "Just Another Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+  cursor: url(../assets/image_29.png), auto;
+}
+/* .principal-text {
+  font-size: em;
+  color: #14220b;
+  transform: translate(50%, 80%);
+} */
+ .container-principal-text {
+  position: relative;
+  transform: translateX(-50%);
+  margin-top: -40px;
+ }
+.container-principal-textAll {
+  position: relative;
+  margin-left: 20px;
+  color: #889DA2;
+  font-size: 5em;
+  text-align: left;
+}
+.viewLink {
+  text-decoration: none;
+  color: #889DA2;
+}
+.principal-textAll{
+  margin-top: 10%;
+}
+
+.faceMonster {
+  position: absolute;
+  width: 100%;
+}
+/* .principal-textAll {
+  margin-left: 20px;
+} */
