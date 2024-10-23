@@ -3,7 +3,7 @@
   background-color: #411A1B;
   width: 50%;
   border: none;
-  margin-top: 5%;
+  margin-top: 2%;
 }
 
 .buttonStory{
@@ -18,10 +18,26 @@
   font-weight: 400;
   font-style: normal;
   margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .avatar-face {
-  width: 100px;
+  margin-top: 5%;
+  width: 150px;
+}
+.icon-close{
+  display: flex;
+  position: relative;
+  /* margin-top: 80px; */
+  margin-left: 2%;
+  border: none;
+  background-color: transparent;
+  border-radius: 10px; 
+  cursor: pointer;   
+}
+#icon-close-text {
+  color: black;
+  cursor: pointer;
 }
 
 .titleDarkStory {
