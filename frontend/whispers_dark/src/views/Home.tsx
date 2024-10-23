@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Header } from "../components/Header";
 import { Link } from "react-router-dom";
 import fondo from './../assets/fondo_inicio.jpeg'
-import './../styles/home.css'
+import './../styles/Home.css'
 import { BackgroundAudio } from "../components/Audio";
 
 export const Home = () => {
