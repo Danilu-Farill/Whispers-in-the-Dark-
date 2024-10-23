@@ -35,15 +35,15 @@
   margin-top: 100px;
   display: flex;
   flex-wrap: wrap;
-  gap: 150px; /* Espacio entre los contenedores */
-  justify-content: center; /* Centrar el contenido */
+  gap: 150px; 
+  justify-content: center; 
 }
 .container-stories-cards{
   font-size: 4em;
   background-color: #3E565F;
   color: #889DA2;
   padding: 40px;
-  width: 300px; /* Tamaño fijo para las tarjetas */
+  width: 300px; 
   border-radius: 10px;
   text-align: center;
   cursor: pointer;

@@ -21,7 +21,6 @@ export const useLoginConnection = () => {
       console.log("🚀 ~ loginConnection ~ data:", data)
       console.log("🚀 ~ loginConnection ~ data:email", data.email)
       localStorage.setItem("username", data.email);
-      // localStorage.setItem("description", data.password);
       navigate("/principal");
     }
     catch (error) {

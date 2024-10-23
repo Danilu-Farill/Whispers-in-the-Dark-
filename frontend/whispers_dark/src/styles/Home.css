@@ -13,15 +13,13 @@
   max-width: 800px;
   margin: 0 auto;
   display: block;
-  filter: blur(0); /* No difuminar toda la imagen */
+  filter: blur(0); 
   -webkit-mask-image: radial-gradient(circle, rgba(1, 0, 32, 1) 60%, rgba(1, 0, 32, 0) 100%);
   mask-image: radial-gradient(circle, rgba(1, 0, 32, 1) 60%, rgba(1, 0, 32, 0) 100%);
 }
 
 .container-home-button {
   padding: 0 50%;
-  /* position: absolute; */
-  /* display: flex; */
 }
 
 .homeLink {

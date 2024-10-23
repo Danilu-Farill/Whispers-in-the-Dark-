@@ -1,7 +1,5 @@
 .bloodHeader {
     width: 100%;
-    /* height: 25%; */
-    /* max-width: 1280px; */
     object-fit: cover;
     filter: brightness(0) invert(0) contrast(1000%);
   }

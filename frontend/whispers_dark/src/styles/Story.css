@@ -28,7 +28,6 @@
 .icon-close{
   display: flex;
   position: relative;
-  /* margin-top: 80px; */
   margin-left: 2%;
   border: none;
   background-color: transparent;
@@ -80,12 +79,12 @@
     opacity: 1;
   }
   50% {
-    height: 30px; /* Ajusta la longitud del goteo */
+    height: 30px;
     opacity: 0.8;
   }
   100% {
     height: 0;
     opacity: 0;
-    transform: translateY(50px); /* Ajusta para hacer que la gota baje */
+    transform: translateY(50px);
   }
 }

@@ -31,18 +31,16 @@
 .container-categories-iconsOrder > div:not(:last-child)::after {
   content: "";
   position: absolute;
-  right: -15px; /* Ajusta la posición de la línea */
-  height: 100%; /* Altura de la línea */
-  width: 2px; /* Grosor de la línea */
-  background-color: #1F3F58; /* Color de la línea */
+  right: -15px; 
+  height: 100%; 
+  width: 2px; 
+  background-color: #1F3F58; 
 }
-    
-    /* Estilo para los íconos */
 .iconArrow, .iconFilter, .iconSearch {
   color: #A7BA9A;
   display: flex;
   align-items: center;
-  font-size: 2rem; /* Ajusta el tamaño de los íconos si es necesario */
+  font-size: 2rem;
   cursor: pointer;  
 }
   

@@ -6,32 +6,9 @@ import { TitleHeader } from './Title';
 import { MenuItem, IFilter, IOrder } from '../types/Menu';
 import '../styles/CategoryStructure.css';
 
-// const applyFilterAndOrder = () => {
-//     const filteredData = data.filter((item) => {
-//         if (selectedFilter === 'title') {
-//             return item.title.includes(selectedFilter);
-//         } else if (selectedFilter === 'category') {
-//             return item.category.includes(selectedFilter);
-//         } else {
-//             return true;
-//         }
-//     });
-
-//     const orderedData = filteredData.sort((a, b) => {
-//         if (selectedOrder === 'asc') {
-//             return a.title.localeCompare(b.title);
-//         } else if (selectedOrder === 'desc') {
-//             return b.title.localeCompare(a.title);
-//         } else {
-//             return 0;
-//         }
-//     });
-// }
-
 export const CategoryStructure = () => {
     const navigate = useNavigate();
 
-    // const [data, setData] = useState([]);
     const [selectedFilter, setSelectedFilter] = useState('');
     const [selectedOrder, setSelectOrder] = useState('');
     const [isOpen, setIsOpen] = useState(false);
@@ -50,11 +27,9 @@ export const CategoryStructure = () => {
     const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedFilter(e.target.value);
     };
-
     const handleOrderChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectOrder(e.target.value);
     };
-
     const handleToggleMenu = () => {
         setIsOpen(!isOpen);
     };

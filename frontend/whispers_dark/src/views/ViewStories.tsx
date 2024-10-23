@@ -9,18 +9,17 @@ import { StoryCardProps } from "../types/Menu";
 
 export const ViewStories = () => {
     const { title } = useParams<{ title: string }>();
-    const { pricipalStories } = usePrincipalConnection();  // Función para obtener historias
-    const [story, setStory] = useState<StoryCardProps | null>(null);  // Estado para la historia seleccionada
-
+    const { pricipalStories } = usePrincipalConnection(); 
+    const [story, setStory] = useState<StoryCardProps | null>(null);  
     useEffect(() => {
         window.history.pushState(null, '', window.location.href);
         window.history.replaceState(null, '', window.location.href);
         document.body.style.backgroundColor = '#1A1C17';
         const fetchStory = async () => {
-            const data = await pricipalStories();  // Obtener todas las historias
+            const data = await pricipalStories();  
             if (data) {
-              const foundStory = data.find((s: StoryCardProps) => s.title === title);  // Encontrar la historia por título
-              setStory(foundStory || null);  // Establecer la historia encontrada
+              const foundStory = data.find((s: StoryCardProps) => s.title === title);
+              setStory(foundStory || null);
             }
           };
           fetchStory();
@@ -30,7 +29,7 @@ export const ViewStories = () => {
         }
     }, [title]);
     if (!story) {
-        return <p>Cargando...</p>;  // Mostrar un mensaje de carga
+        return <p>Cargando...</p>;
       }
     return(
         <>

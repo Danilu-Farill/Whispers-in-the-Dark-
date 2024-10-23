@@ -1,21 +1,19 @@
 .container-categories-viewAll{
   position: relative;
   padding: auto;
-  /* padding-left: 102px;
-  padding-right: 100px; */
   margin-top: 100px;
   margin-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
-  gap: 150px; /* Espacio entre los contenedores */
-  justify-content: center; /* Centrar el contenido */
+  gap: 150px; 
+  justify-content: center;
 }
 .container-categories-cards{
   font-size: 2em;
   background-color: #3E565F;
   color: #889DA2;
   padding: 30px;
-  width: 20%; /* Tamaño fijo para las tarjetas */
+  width: 20%; 
   border-radius: 10px;
   text-align: center;
   cursor: pointer;

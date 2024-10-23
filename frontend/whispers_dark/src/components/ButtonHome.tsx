@@ -1,6 +1,5 @@
 import './../styles/ButtonHome.css';
 import { ButtonHomeProps } from '../types/ButtonHome';
-// import { IButtonProps } from '../types/Register.interface';
 
 export const ButtonHome: React.FC<ButtonHomeProps> = ({ children, onCreate }) => {
     return (
