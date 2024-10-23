@@ -1,5 +1,5 @@
 import image from './../assets/blood.png';
-import './../styles/header.css';
+import './../styles/Header.css';
 
 export const Header = () =>{
     return(
