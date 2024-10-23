@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Header } from "../components/Header";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import fondo from './../assets/fondo_inicio.jpeg'
 // import scream from '../assets/audio/scream.mp3';
 // import backgroundMusic from '../assets/audio/background-music.mp3';
@@ -9,7 +9,7 @@ import { BackgroundAudio } from "../components/Audio";
 // import { BackgroundAudio } from "../components/Audio";
 
 export const Home = () => {
-  const navigator = useNavigate()
+  // const navigator = useNavigate()
   useEffect(() => {
     document.body.style.backgroundColor = '#010020';
     // const audio = new Audio(backgroundMusic);
