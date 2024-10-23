@@ -4,11 +4,6 @@
   font-style: normal;
   cursor: url(../assets/image_29.png), auto;
 }
-/* .principal-text {
-  font-size: em;
-  color: #14220b;
-  transform: translate(50%, 80%);
-} */
  .container-principal-text {
   position: relative;
   transform: translateX(-50%);
@@ -33,6 +28,23 @@
   position: absolute;
   width: 100%;
 }
-/* .principal-textAll {
-  margin-left: 20px;
-} */
+.containe-principal-story{
+  position: relative;
+  padding-left: 202px;
+  padding-right: 200px;
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 150px; /* Espacio entre los contenedores */
+  justify-content: center; /* Centrar el contenido */
+}
+.container-stories-cards{
+  font-size: 4em;
+  background-color: #3E565F;
+  color: #889DA2;
+  padding: 40px;
+  width: 300px; /* Tamaño fijo para las tarjetas */
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}

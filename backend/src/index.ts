@@ -2,11 +2,19 @@ import express, { Application, Request, Response } from "express";
 import dotenv from "dotenv";
 // import mongoose from 'mongoose';
 import {router} from './router/index.router';
+import { testConnection } from "./connection";
+import { sequelize } from "./config/sequelize";
+import cors from 'cors';
+import { User, UserExistingStory, NewStory, StoryExisting } from './models/index.model'
+// import './models/associations.model';
+
 
 dotenv.config();
 const app: Application = express();
 const port:number = parseInt(process.env.PORT || "4001");
 app.use(express.json());
+app.use(cors());
+
 
 // const mongoURI = process.env.DB_URL;
 // if (!mongoURI) {
@@ -23,6 +31,20 @@ app.get("/", (req: Request, resp: Response) => {
   resp.send("localhost 4000")
 });
 
-app.listen(port, (): void => {
-  console.log('server active in port', port); 
-});
+const startServer = async () => {
+  try {
+    await testConnection();
+    console.log('Database connected');
+
+    await sequelize.sync();
+    console.log('Database synchronized successfully!');
+
+    app.listen(port, () => {
+      console.log(`Server running on port ${port}`);
+    });
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
+};
+
+startServer();

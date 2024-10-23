@@ -1,0 +1,17 @@
+.container-viewStories-screen{
+    background-color: #411A1B;
+    padding: 10%;
+    margin: 10%;
+}
+
+.story-details-description{
+    color: #345C75;
+    font-size: 2em;
+}
+.story-details-title{
+    color: #0F1217;
+    font-size: 4em;
+}
+.story-details-imagen{
+  width: 100%;
+}

@@ -6,6 +6,7 @@
   /* cursor: url(../assets/teeth.png), auto; */
   margin-bottom: 50px;
   border: none;
+  cursor: pointer;
 }
 
 .container-buttonHome-text{

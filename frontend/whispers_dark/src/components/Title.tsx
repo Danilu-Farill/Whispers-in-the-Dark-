@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import '../styles/Title.css';
 
-export const Title = () => {
+export const TitleHeader = () => {
     const text = "Whispers in the Dark";
     const [letters, setLetters] = useState<JSX.Element[]>([]);
     useEffect(() => {
