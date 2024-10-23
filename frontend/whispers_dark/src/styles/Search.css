@@ -47,9 +47,15 @@
   background-color: #1F3F58;
   color: #A7BA9A;
   padding: 20px;
-  width: 200px; /* Tamaño fijo para las tarjetas */
+  width: 50%; /* Tamaño fijo para las tarjetas */
   border-radius: 10px;
   text-align: center;
+  cursor: pointer;
+}
+.story-card-image{
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
 }
 
 .iconArrowLeft{

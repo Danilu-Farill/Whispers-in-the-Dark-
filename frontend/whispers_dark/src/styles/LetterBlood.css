@@ -25,7 +25,7 @@
 .titleDark .letter::before, .titleDark .letter::after {
   content: "";
   position: absolute;
-  width: 2px;
+  width: 4px;
   background: rgba(1, 0, 32, 0.7);
   left: 50%;
   transform: translateX(-50%);

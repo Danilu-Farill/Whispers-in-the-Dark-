@@ -1,0 +1,14 @@
+/* .container-home-audio{} */
+.audio-controls{
+  display: flex;
+  /* flex-direction: row-reverse; */
+}
+.mute-button{
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #010020;
+  border-radius: 10px;    
+  margin-bottom: 50px;
+  margin-left: 15px;
+}

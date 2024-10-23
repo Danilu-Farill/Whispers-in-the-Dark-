@@ -8,6 +8,7 @@ import { Principal } from './views/Principal';
 import { Categories } from './views/Categories';
 import { Search } from './views/Search';
 import { Story } from './views/Story';
+import { ViewStories } from './views/ViewStories';
 // import { useLettersBlood } from './hooks/useLetterBlood'; //va en la vista que voy a cambiar
 
 
@@ -24,8 +25,7 @@ const App: React.FC = () => {
         <Route path='/category' element={<Categories/>}/>
         <Route path='/search' element={<Search/>}/>
         <Route path='/story' element={<Story/>}/>
-        {/* <Route path='/newStory' element={<NewStory/>}/> */}
-
+        <Route path='/view/:title' element={<ViewStories/>}/>
       </Routes>
     </Router>
   );
