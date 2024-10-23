@@ -16,6 +16,4 @@ function router(app:Application): void {
 }
 
 export {router};
-//app.use("/home", router);
-//app.use(router)
-//router(app)
+

@@ -1,6 +1,5 @@
 import express, { Application, Request, Response } from "express";
 import dotenv from "dotenv";
-// import mongoose from 'mongoose';
 import {router} from './router/index.router';
 import { testConnection } from "./connection";
 import { sequelize } from "./config/sequelize";
@@ -14,16 +13,6 @@ const app: Application = express();
 const port:number = parseInt(process.env.PORT || "4001");
 app.use(express.json());
 app.use(cors());
-
-
-// const mongoURI = process.env.DB_URL;
-// if (!mongoURI) {
-//   throw new Error('DB_URL no está definido');
-// }
-
-// mongoose.connect(mongoURI)
-//   .then(() => console.log('MongoDB connected'))
-//   .catch((err: Error) => console.error('Connection error', err));
   
 router(app);
 
