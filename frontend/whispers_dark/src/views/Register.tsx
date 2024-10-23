@@ -60,8 +60,6 @@ export const Register = () => {
             <div className="container-register-button">
                 <ButtonHome onCreate={hadleCreate} > CREAR CUENTA </ButtonHome>
                 <p className="register-button-opc"> ¿Ya tienes una cuenta?<Link to='/login' className="register-button-a">Inicia sesión</Link></p>
-                {/* <ButtonHome onCreate={hadleCreate}><Link to='/principal' className="buttonHomeLink"> CREAR CUENTA </Link></ButtonHome>
-                <p className="register-button-opc"> ¿Ya tienes una cuenta?<Link to='/login' className="register-button-a">Inicia sesión</Link></p> */}
             </div>
         </div>
     </>
