@@ -1,8 +1,9 @@
 export const usePrincipalConnection = () => {
   const pricipalStories = async () => {
+    const apiUrl = process.env.REACT_APP_API_URL;
     try {
-        console.log("fetch");
-      const response = await fetch("http://localhost:4000/home/story/", {
+      console.log("fetch");
+      const response = await fetch(`${apiUrl}/home/story/`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

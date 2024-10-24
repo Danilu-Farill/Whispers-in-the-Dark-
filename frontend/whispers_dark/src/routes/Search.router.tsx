@@ -1,7 +1,8 @@
 export const useSearchConnection = () => {
   const searchStory = async (title: string) => {
+    const apiUrl = process.env.REACT_APP_API_URL;
     try {
-      const response = await fetch(`http://localhost:4000/home/story/${title}`, {
+      const response = await fetch(`${apiUrl}/home/story/${title}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

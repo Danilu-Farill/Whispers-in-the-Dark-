@@ -2,11 +2,11 @@ import { useNavigate } from "react-router-dom";
 import { IUser } from "../types/Register.interface";
 
 export const useLoginConnection = () => {
-  const localhost = process.env.LOCALHOST;
-    const navigate = useNavigate();
+  const apiUrl = process.env.REACT_APP_API_URL;
+  const navigate = useNavigate();
   const loginUser = async ({email, password}: IUser) => {
     try {
-      const response = await fetch(`http://${localhost}/home/users/login`, {
+      const response = await fetch(`${apiUrl}/home/users/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

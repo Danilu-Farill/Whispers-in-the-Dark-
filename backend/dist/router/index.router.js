@@ -19,6 +19,3 @@ function router(app) {
     routes.use('/FKtables', userExistingStory_1.routerUserExistingStory);
     routes.use('/cloudinary', story_routes_1.routerCloudinary);
 }
-//app.use("/home", router);
-//app.use(router)
-//router(app)

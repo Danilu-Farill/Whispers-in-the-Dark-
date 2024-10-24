@@ -2,11 +2,12 @@ import { useNavigate } from "react-router-dom";
 import { IUser } from "../types/Register.interface";
 
 export const useRegisterConnection = () => {
-    const navigate = useNavigate();
+  const apiUrl = process.env.REACT_APP_API_URL;
+  const navigate = useNavigate();
   const registerUser = async ({email, password}: IUser) => {
     try {
         console.log("fetch");
-      const response = await fetch("http://localhost:4000/home/users/create", {
+      const response = await fetch(`${apiUrl}/home/users/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

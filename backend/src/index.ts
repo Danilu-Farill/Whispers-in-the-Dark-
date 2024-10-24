@@ -7,7 +7,6 @@ import cors from 'cors';
 import { User, UserExistingStory, NewStory, StoryExisting } from './models/index.model'
 // import './models/associations.model';
 
-
 dotenv.config();
 const app: Application = express();
 const port:number = parseInt(process.env.PORT || "4001");
