@@ -7,7 +7,7 @@ export const useLoginConnection = () => {
     try {
       const response = await fetch("http://localhost:4000/home/users/login", {
         method: "POST",
-        mode: 'no-cors',
+        // mode: 'no-cors',
         headers: {
           "Content-Type": "application/json",
         },

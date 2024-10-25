@@ -8,7 +8,7 @@ export const useRegisterConnection = () => {
         console.log("fetch");
       const response = await fetch("http://localhost:4000/home/users/create", {
         method: "POST",
-        mode: 'no-cors',
+        // mode: 'no-cors',
         headers: {
           "Content-Type": "application/json",
         },

@@ -7,7 +7,7 @@ export const usePrincipalConnection = () => {
         console.log("fetch");
       const response = await fetch("http://localhost:4000/home/story/", {
         method: "GET",
-        mode: 'no-cors',
+        // mode: 'no-cors',
         headers: {
           "Content-Type": "application/json",
         },
