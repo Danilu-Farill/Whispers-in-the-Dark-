@@ -24,7 +24,13 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = parseInt(process.env.PORT || "4001");
 app.use(express_1.default.json());
-app.use((0, cors_1.default)());
+// app.use(cors());
+app.use((0, cors_1.default)({
+    origin: ['https://whispers-in-the-dark-phi.vercel.app', 'http://localhost:5173'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+}));
 // const mongoURI = process.env.DB_URL;
 // if (!mongoURI) {
 //   throw new Error('DB_URL no está definido');
