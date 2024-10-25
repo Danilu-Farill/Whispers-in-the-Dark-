@@ -2,8 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { IUser } from "../types/Register.interface";
 
 export const useRegisterConnection = () => {
-  //const apiUrl = "https://whispers-in-the-dark-phi.vercel.app";
-  const apiUrl = process.env.REACT_APP_API_URL;
+  const apiUrl = "https://whispers-in-the-dark-phi.vercel.app";
+  // const apiUrl = process.env.REACT_APP_API_URL;
   const navigate = useNavigate();
   const registerUser = async ({email, password}: IUser) => {
     try {

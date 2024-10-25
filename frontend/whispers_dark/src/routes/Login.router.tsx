@@ -7,7 +7,7 @@ export const useLoginConnection = () => {
   const navigate = useNavigate();
   const loginUser = async ({email, password}: IUser) => {
     try {
-      const response = await fetch(`http://localhost:4000/home/users/create`, {
+      const response = await fetch(`http:whispers-in-the-dark-phi.vercel.app/home/users/create`, {
         method: "POST",
         // mode: 'no-cors',
         headers: {

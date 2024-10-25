@@ -1,7 +1,7 @@
 export const usePrincipalConnection = () => {
   const pricipalStories = async () => {
-    const apiUrl ="http://localhost:4000";
-    // const apiUrl = "https://whispers-in-the-dark-phi.vercel.app";
+    // const apiUrl ="http://localhost:4000";
+    const apiUrl = "https://whispers-in-the-dark-phi.vercel.app";
     //const apiUrl = process.env.REACT_APP_API_URL;
     try {
       const response = await fetch(`${apiUrl}/home/story/`, {
