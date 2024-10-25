@@ -23,7 +23,12 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = parseInt(process.env.PORT || "4001");
 app.use(express_1.default.json());
-app.use((0, cors_1.default)());
+//app.use(cors());
+app.use((0, cors_1.default)({
+    origin: 'https://whispers-in-the-dark-phi.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 (0, index_router_1.router)(app);
 app.get("/", (req, resp) => {
     resp.send("localhost 4000");

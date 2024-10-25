@@ -2,7 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { IUser } from "../types/Register.interface";
 
 export const useLoginConnection = () => {
-  const apiUrl = process.env.REACT_APP_API_URL;
+  const apiUrl = "https://whispers-in-the-dark-phi.vercel.app";
+  // const apiUrl ="http://localhost:4000";
   const navigate = useNavigate();
   const loginUser = async ({email, password}: IUser) => {
     try {

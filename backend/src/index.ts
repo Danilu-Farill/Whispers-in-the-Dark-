@@ -11,7 +11,12 @@ dotenv.config();
 const app: Application = express();
 const port:number = parseInt(process.env.PORT || "4001");
 app.use(express.json());
-app.use(cors());
+//app.use(cors());
+app.use(cors({
+  origin: 'https://whispers-in-the-dark-phi.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
   
 router(app);
 
