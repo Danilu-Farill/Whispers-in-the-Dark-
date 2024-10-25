@@ -13,9 +13,10 @@ const port:number = parseInt(process.env.PORT || "4001");
 app.use(express.json());
 //app.use(cors());
 app.use(cors({
-  origin: 'https://whispers-in-the-dark-phi.vercel.app',
+  origin: ['https://whispers-in-the-dark-phi.vercel.app', 'http://localhost:5173'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
   
 router(app);

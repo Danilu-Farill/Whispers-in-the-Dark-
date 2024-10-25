@@ -9,6 +9,7 @@ export const useLoginConnection = () => {
     try {
       const response = await fetch(`${apiUrl}/home/users/login`, {
         method: "POST",
+        mode: 'no-cors',
         headers: {
           "Content-Type": "application/json",
         },

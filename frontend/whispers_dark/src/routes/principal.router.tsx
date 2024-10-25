@@ -5,6 +5,7 @@ export const usePrincipalConnection = () => {
     try {
       const response = await fetch(`${apiUrl}/home/story/`, {
         method: "GET",
+        mode: 'no-cors',
         headers: {
           "Content-Type": "application/json",
         },

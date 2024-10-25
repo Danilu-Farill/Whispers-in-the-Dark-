@@ -25,9 +25,10 @@ const port = parseInt(process.env.PORT || "4001");
 app.use(express_1.default.json());
 //app.use(cors());
 app.use((0, cors_1.default)({
-    origin: 'https://whispers-in-the-dark-phi.vercel.app',
+    origin: ['https://whispers-in-the-dark-phi.vercel.app', 'http://localhost:5173'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
 }));
 (0, index_router_1.router)(app);
 app.get("/", (req, resp) => {

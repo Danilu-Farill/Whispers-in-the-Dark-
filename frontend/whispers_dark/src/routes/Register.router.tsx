@@ -9,6 +9,7 @@ export const useRegisterConnection = () => {
     try {
       const response = await fetch(`${apiUrl}/home/users/create`, {
         method: "POST",
+        mode: 'no-cors',
         headers: {
           "Content-Type": "application/json",
         },
