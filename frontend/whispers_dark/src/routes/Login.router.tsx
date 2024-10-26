@@ -4,10 +4,11 @@ import { IUser } from "../types/Register.interface";
 export const useLoginConnection = () => {
   // const apiUrl = "https://whispers-in-the-dark-phi.vercel.app";
   // const apiUrl ="http://localhost:4000";
+  const apiUrl = process.env.REACT_APP_API_URL;
   const navigate = useNavigate();
   const loginUser = async ({email, password}: IUser) => {
     try {
-      const response = await fetch(`https://whispers-in-the-dark-phi.vercel.app/home/users/create`, {
+      const response = await fetch(`${apiUrl}/home/users/login`, {
         method: "POST",
         mode: 'cors',
         headers: {
