@@ -9,7 +9,7 @@ export const useLoginConnection = () => {
     try {
       const response = await fetch(`https://whispers-in-the-dark-phi.vercel.app/home/users/create`, {
         method: "POST",
-        mode: 'no-cors',
+        mode: 'cors',
         headers: {
           "Content-Type": "application/json",
         },
