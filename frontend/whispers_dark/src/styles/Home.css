@@ -1,45 +1,60 @@
 .container-home {
   cursor: url(../assets/image_29.png), auto;
-  position: relative;
+  position: absolute;
 }
-
 .container-home-img {
   position: relative;
   bottom: 50px;
  }
-
 .img-hill {
-  width: 200%;
-  max-width: 800px;
+  width: 100%;
+  max-width: 85%;
+  /* max-width: 800px; */
   margin: 0 auto;
   display: block;
   filter: blur(0); /* No difuminar toda la imagen */
   -webkit-mask-image: radial-gradient(circle, rgba(1, 0, 32, 1) 60%, rgba(1, 0, 32, 0) 100%);
   mask-image: radial-gradient(circle, rgba(1, 0, 32, 1) 60%, rgba(1, 0, 32, 0) 100%);
 }
-
 .container-home-button {
   padding: 0 50%;
-  /* position: absolute; */
-  /* display: flex; */
+  display: flex;
+  justify-content: center;
 }
-
 .homeLink {
+  padding: 5px;
   text-decoration: none;
   color: #010020;
+  letter-spacing: 0.25em;
+  word-spacing: 0.25em;
 }
-
 .buttonHomeInit{
-  font-size: 40px;
+  font-size: 50px;
   background-color: #0541AF;
-  border-radius: 10px;
+  border-radius: 15px;
   border: none;;
-  width: 200px;
-  height: 8vh;
+  height: 10vh;
   color: #010020;
   font-family: "Just Another Hand", cursive;
-  font-weight: 400;
+  font-weight: 800;
   font-style: normal;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   cursor: pointer;
+}
+
+/* Pantallas pequeñas (celulares) */
+@media (max-width: 768px) {
+  .container-home-button{
+    padding: 0 50%;
+    position: relative;
+  }
+  .buttonHomeInit {
+    border-radius: 8px;;
+    width: 200px;
+    font-size: 30px;
+    height: 5vh;
+  }
+  /* .homeLink {
+    padding: 15px;
+  } */
 }

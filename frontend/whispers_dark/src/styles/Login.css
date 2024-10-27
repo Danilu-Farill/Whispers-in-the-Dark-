@@ -1,23 +1,30 @@
 .container-login {
   cursor: url(../assets/image_29.png), auto;
 }
-
 .loginLink {
-    text-decoration: none;
-    color: #010020;
+  text-decoration: none;
+  color: #010020;
 }
-
 .login-button-init {
   font-size: 4em;
 }
-
 .avatar-faceLogin {
-  width: 200px;
+  width: 20%;
   margin-bottom: 5%;
 }
+.container-login-button{
+  margin-bottom: 10%;
+}
+.container-login-avatar{
+  text-align: center;
+}
+.container-login-text{
+  text-align: center;
+}
 
-.titleDark {
-  font-family: "Just Another Hand", cursive;
-  font-weight: 400;
-  font-style: normal;
+/* Pantallas pequeñas (celulares) */
+@media (max-width: 768px) {
+  .login-button-init {
+    font-size: 3em;
+  }
 }

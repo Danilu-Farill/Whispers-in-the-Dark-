@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Header } from '../components/Header';
 import faceMonster from '../assets/Subtract.png'
 import { Link } from 'react-router-dom';
-import './../styles/pricipal.css';
+import './../styles/Pricipal.css';
 import { TitleHeader } from '../components/Title';
 import backgroundMusic from '../assets/audio/background-music.mp3';
 
@@ -31,16 +31,16 @@ export const Principal = () => {
             <div className='container-principal-header'>
                 <Header/>
             </div>
-            <div>
+            <div className='container-principal-title'>
                 <TitleHeader/>
             </div>
             <div className='container-principal-text'>
-                <img src={faceMonster} alt="face monster" className='faceMonster'/>
+                <img src={faceMonster} alt="face monster" className='faceMonster'/>{/* ARREGLAR LA IMAGEN PARA TAMAÑO TABLET(768) Y LAPTOP(1024)*/}
             </div>
             <div className='container-principal-textAll'>
                 <p className='principal-textAll'> <Link to='/category' className='viewLink'>Ver todo...</Link></p>
             </div>
-            <div className='containe-principal-story'>
+            <div className='container-principal-story'>
                 {story.map((stories, index) =>(
                     <div key={index} className='container-stories-cards'>
                         {stories}

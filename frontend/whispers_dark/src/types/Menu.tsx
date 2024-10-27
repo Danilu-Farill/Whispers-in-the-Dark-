@@ -10,7 +10,7 @@ export interface IFilter {
 
 export interface IOrder {
   label: string;
-  valor: string;
+  value: string;
 }
 
 export interface StoryCardProps {

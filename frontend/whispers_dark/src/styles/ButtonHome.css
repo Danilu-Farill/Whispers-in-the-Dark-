@@ -1,10 +1,14 @@
+.container-buttonHome{
+  text-align: center;
+}
 .container-buttonHome-button {
   color: #010020;
   width: 200px;
   border-radius: 8px;
   background-color: #0541AF;
   /* cursor: url(../assets/teeth.png), auto; */
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
+  margin-top: -10%;
   border: none;
   cursor: pointer;
 }
@@ -15,4 +19,13 @@
   font-style: normal;
   font-size: 2.5rem;
 }
-
+/* Pantallas pequeñas (celulares) */
+@media (max-width: 768px) {
+  .container-buttonHome-button{
+    margin-top: 10%;
+    width: 50%;
+  }
+  .container-buttonHome-text{
+    font-size: 2rem;
+  }
+}

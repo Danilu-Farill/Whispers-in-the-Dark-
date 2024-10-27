@@ -1,29 +1,44 @@
 #inputStory { 
+  font-size: 2em;
+  font-family: "Just Another Hand", cursive;
+  font-weight: 400;
   border-radius: 2px; 
   background-color: #411A1B;
   width: 50%;
   border: none;
   margin-top: 2%;
 }
-
 .buttonStory{
   border-radius: 20px;
   font-size: 2em;
   border: none;
-  width: 20%;
+  width: 40%;
   height: 5vh;
   color: #345C75;
   background-color: #474048;
   font-family: "Just Another Hand", cursive;
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
   margin-top: 5%;
   margin-bottom: 5%;
+  letter-spacing: 4px;
 }
-
+.container-story-avatar{
+  text-align: center;
+}
+.container-story-text{
+  text-align: center;
+}
+.container-story-input{
+  text-align: center;
+}
+.container-story-button{
+  text-align: center;
+}
 .avatar-face {
-  margin-top: 5%;
-  width: 150px;
+  /* margin-top: 5%; */
+  width: 20%;
+  margin-bottom: 5%;
 }
 .icon-close{
   display: flex;
@@ -39,20 +54,17 @@
   color: black;
   cursor: pointer;
 }
-
 .titleDarkStory {
-  font-size: 40px;
+  font-size: 4em;
   font-family: "Just Another Hand", cursive;
   font-weight: 400;
   font-style: normal;
   color: white;
 } 
-  
 .titleDarkStory .letterStory {
   position: relative;
   display: inline-block;
-}
-  
+} 
 .titleDarkStory .letterStory::before, .titleDarkStory .letterStory::after {
   content: "";
   position: absolute;
@@ -62,12 +74,10 @@
   transform: translateX(-50%);
   animation: blood 4s infinite ease-in-out;
 }
-
 .titleDarkStory .letterStory::before {
   height: 10px;
   top: 50%;
 }
-
 .titleDarkStory .letterStory::after {
   height: 6px;
   top: 50%;
@@ -88,4 +98,20 @@
     opacity: 0;
     transform: translateY(50px); /* Ajusta para hacer que la gota baje */
   }
+}
+
+@media (max-width: 768px) {
+  .buttonStory{
+    border-radius: 20px;
+    font-size: 1.8em;
+    width: 80%;
+    height: 5vh;
+    margin-top: 10%;
+  }
+  .avatar-face {
+    width: 30%;
+  }
+  .titleDarkStory {
+    font-size: 2.5em;
+  } 
 }

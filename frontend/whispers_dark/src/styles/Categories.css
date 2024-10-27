@@ -11,10 +11,10 @@
   justify-content: center; /* Centrar el contenido */
 }
 .container-categories-cards{
-  font-size: 2em;
+  font-size: 1em;
   background-color: #3E565F;
   color: #889DA2;
-  padding: 30px;
+  padding: 10px;
   width: 20%; /* Tamaño fijo para las tarjetas */
   border-radius: 10px;
   text-align: center;
@@ -30,4 +30,15 @@
 }
 .categories-menu-list{
   list-style: none;
+}
+
+@media (max-width: 768px) {
+  .container-categories-cards{
+    font-size: 0.6em;
+    margin-bottom: 10%;
+  }
+  .container-categories-viewAll{
+    margin-top: -5%;
+    gap: 15%; /* Espacio entre los contenedores */
+  }
 }

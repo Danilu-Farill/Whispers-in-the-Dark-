@@ -2,14 +2,18 @@ import { useNavigate } from "react-router-dom";
 import { IUser } from "../types/Register.interface";
 
 export const useLoginConnection = () => {
-    const navigate = useNavigate();
+  // localStorage.setItem("token", tokenDelUsuario);
+  // const token = localStorage.getItem("token");
+  // const apiUrl = process.env.REACT_APP_API_URL;
+  const navigate = useNavigate();
   const loginUser = async ({email, password}: IUser) => {
     try {
-      const response = await fetch("http://localhost:4000/home/users/login", {
+      const response = await fetch(`http://localhost:4000/home/users/login`, {
         method: "POST",
-        // mode: 'no-cors',
+        // mode: 'cors',
         headers: {
           "Content-Type": "application/json",
+          // "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify({email, password}),
       });
@@ -32,6 +36,47 @@ export const useLoginConnection = () => {
     return { loginUser };
 }
 
+
+/*
+const apiUrl = "https://tu-backend-en-railway.app/home/users";
+
+// Función para hacer login y almacenar el token
+function loginUser(credentials) {
+  fetch(`${apiUrl}/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(credentials)
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.token) {
+      // Guarda el token en localStorage
+      localStorage.setItem("token", data.token);
+    }
+  })
+  .catch(error => console.error("Error:", error));
+}
+
+// Función para obtener usuarios con autenticación
+function getUsers() {
+  const token = localStorage.getItem("token");
+
+  fetch(apiUrl, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
+    }
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error("Error:", error));
+}
+
+
+*/
 
 
 

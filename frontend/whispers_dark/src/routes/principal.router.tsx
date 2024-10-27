@@ -2,12 +2,12 @@
 // import { IStory } from "../types/Register.interface";
 
 export const usePrincipalConnection = () => {
+  // const apiUrl = process.env.REACT_APP_API_URL;
   const pricipalStories = async () => {
     try {
-        console.log("fetch");
-      const response = await fetch("http://localhost:4000/home/story/", {
+      const response = await fetch(`http://localhost:4000/home/story`, {
         method: "GET",
-        // mode: 'no-cors',
+        // mode: 'cors',
         headers: {
           "Content-Type": "application/json",
         },
