@@ -1,8 +1,6 @@
 import { Request, Response, RequestHandler } from "express";
 import NewStory from "../models/newStorys.model";
 import User from "../models/users.model";
-import { where } from "sequelize";
-import { title } from "process";
 
 export const createNewStory: RequestHandler = async(req:Request, resp:Response): Promise<any> => {
     try {//email params para que se cree en base al email del usuario
@@ -22,6 +20,7 @@ export const createNewStory: RequestHandler = async(req:Request, resp:Response):
             return resp.status(400).json("Título de la historia ya existe");  
         }
         const story = await NewStory.create({title, description, imageUrl, category, id_user});
+        console.log("🚀 ~ constcreateNewStory:RequestHandler=async ~ story:", story)
         resp.status(201).json({ message: "Historia creada con éxito"});
     } catch (error) {
         console.log("🚀 ~ constcreateNewStory:RequestHandler=async ~ error:", error)
@@ -34,6 +33,7 @@ export const getNewStories = async (req:Request, resp:Response): Promise<any> =>
         const newStories = await NewStory.findAll();
         return resp.status(200).json({ message: "Todas las historias mas recientes", newStories });
     } catch (error) {
+        console.log("🚀 ~ getNewStories ~ error:", error)
         return resp.status(500).json("Error del servidor");
     }
 }
@@ -42,6 +42,7 @@ export const getIdNewStories = async (req:Request, resp:Response): Promise<any> 
     try {//buscar por categoria
         return resp.status(200).json({ message: "Historias mas recientes"});        
     } catch (error) {
+        console.log("🚀 ~ getNewStories ~ error:", error)
         return resp.status(500).json("Error del servidor");
     }
 }
@@ -57,9 +58,7 @@ export const getNewStoryCategory = async (req:Request, resp:Response): Promise<a
         if (!findEmailUser) {
             return resp.status(404).json("No se encontró el email");
         }
-        const id_user = findEmailUser.id_user; // Obten el id_user
-        console.log("hola2");
-        
+        const id_user = findEmailUser.id_user; // Obten el id_use
         console.log("id_user:", id_user);
         console.log("email:", email);
         console.log("category:", category);
@@ -67,12 +66,11 @@ export const getNewStoryCategory = async (req:Request, resp:Response): Promise<a
         console.log("hola3");
         
         if (!findNewStoryCategory.length) {
-            console.log("hola1");
             return resp.status(404).json({ message: "No se encontraron historias con la categoría especificada" });
           }  
-          console.log("hola4");
         return resp.status(200).json({ message: "Historias mas recientes", findNewStoryCategory});        
     } catch (error) {
+        console.log("🚀 ~ getNewStories ~ error:", error)
         return resp.status(500).json("Error del servidor");
     }
 }
@@ -87,6 +85,7 @@ export const getNewStoryOrder = async (req:Request, resp:Response): Promise<any>
         })
         return resp.status(200).json({ message: "Historias ordenadas", findOrder});        
     } catch (error) {
+        console.log("🚀 ~ getNewStories ~ error:", error)
         return resp.status(500).json("Error del servidor");
     }
 }
@@ -96,6 +95,7 @@ export const putNewStories = async (req:Request, resp:Response): Promise<any> =>
     try {
         return resp.status(200).json({ message: "Historias mas recientes"});        
     } catch (error) {
+        console.log("🚀 ~ getNewStories ~ error:", error)
         return resp.status(500).json("Error del servidor");
     }
 }
@@ -104,10 +104,10 @@ export const deleteNewStories = async (req:Request, resp:Response): Promise<any>
     try {
         return resp.status(200).json({ message: "Historias mas recientes"});        
     } catch (error) {
+        console.log("🚀 ~ getNewStories ~ error:", error)
         return resp.status(500).json("Error del servidor");
     }
 }
 
 //buscar por categoria
-
 //crear una vista para que el usuario pueda crear su historia, debe llevar titulo, descripcion, imagen generada, categoriade las existentes
