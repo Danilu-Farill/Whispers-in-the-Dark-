@@ -14,13 +14,3 @@ routerUsers.post('/login', users_controller_1.loginUser);
 routerUsers.get('/:email', users_controller_1.getIdUser);
 routerUsers.put('/:email', users_controller_1.putUser);
 routerUsers.delete('/:email', users_controller_1.deleteUser);
-//con mongo
-// import { Router } from 'express';
-// import { getAllStories, createStory, getStoryById, updateStory, deleteStory } from '../controller/stories.controller';
-// const routerUsers = Router();
-// routerUsers.get('/', getAllStories);            // GET: /api/stories
-// routerUsers.post('/', createStory);             // POST: /api/stories
-// routerUsers.get('/:id', getStoryById);          // GET: /api/stories/:id
-// routerUsers.put('/:id', updateStory);           // PUT: /api/stories/:id
-// routerUsers.delete('/:id', deleteStory);        // DELETE: /api/stories/:id
-// export {routerUsers};

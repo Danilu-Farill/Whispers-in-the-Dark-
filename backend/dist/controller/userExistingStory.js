@@ -8,8 +8,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAllUserExistingStories = exports.createUserExistingStory = void 0;
+const UserExistingStory_model_1 = __importDefault(require("../models/UserExistingStory.model"));
 const createUserExistingStory = (req, resp) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         // const { id_user, id_existing } = req.body;
@@ -23,8 +27,8 @@ const createUserExistingStory = (req, resp) => __awaiter(void 0, void 0, void 0,
 exports.createUserExistingStory = createUserExistingStory;
 const getAllUserExistingStories = (req, resp) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        // const userExistingStories = await UserExistingStory.findAll();
-        // resp.status(200).json(userExistingStories);
+        const userExistingStories = yield UserExistingStory_model_1.default.findAll();
+        resp.status(200).json(userExistingStories);
     }
     catch (error) {
         resp.status(500).json({ message: "Error obteniendo relaciones", error });

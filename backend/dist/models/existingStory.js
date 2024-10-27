@@ -11,14 +11,6 @@ StoryExisting.init({
         autoIncrement: true,
         // field: 'id_existing',
     },
-    // id_user: {
-    //     type: DataTypes.INTEGER,
-    //     allowNull: false,
-    //     references: {
-    //         model: Story,
-    //         key: 'id_user',
-    //     },
-    // },
     title: {
         type: sequelize_1.DataTypes.STRING,
         allowNull: false
