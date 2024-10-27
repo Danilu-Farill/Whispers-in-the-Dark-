@@ -1,11 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Header } from '../components/Header';
 import { CategoryStructure } from './../components/CategoryStructure';
-<<<<<<< HEAD
-// import './../styles/Pricipal.css';
-=======
 import './../styles/Pricipal.css';
->>>>>>> dataBase
 import'../styles/Categories.css';
 import StoryCard from '../components/StoryCard';
 import { useNavigate } from 'react-router-dom';

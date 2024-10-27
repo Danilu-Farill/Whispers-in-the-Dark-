@@ -2,11 +2,7 @@ import { useEffect, useState } from 'react';
 import { Header } from '../components/Header';
 import faceMonster from '../assets/Subtract.png'
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
-// import './../styles/pricipal.css';
-=======
 import './../styles/Pricipal.css';
->>>>>>> dataBase
 import { TitleHeader } from '../components/Title';
 import backgroundMusic from '../assets/audio/background-music.mp3';
 

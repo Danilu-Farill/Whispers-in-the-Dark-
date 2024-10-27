@@ -3,20 +3,12 @@ import { Header } from "../components/Header";
 import { Link } from "react-router-dom";
 import fondo from './../assets/fondo_inicio.jpeg'
 import './../styles/Home.css'
-<<<<<<< HEAD
-import { BackgroundAudio } from "../components/Audio";
-=======
->>>>>>> dataBase
 
 export const Home = () => {
   useEffect(() => {
     document.body.style.backgroundColor = '#010020';
     return () => {
-<<<<<<< HEAD
-      document.body.style.backgroundColor = ''; 
-=======
       document.body.style.backgroundColor = ''; // Restaurar el color original
->>>>>>> dataBase
     };
   }, []);
     return (
