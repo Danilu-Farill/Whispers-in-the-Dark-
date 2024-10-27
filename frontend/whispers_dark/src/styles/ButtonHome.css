@@ -6,13 +6,9 @@
   width: 200px;
   border-radius: 8px;
   background-color: #0541AF;
-<<<<<<< HEAD
-  margin-bottom: 50px;
-=======
   /* cursor: url(../assets/teeth.png), auto; */
   /* margin-bottom: 50px; */
   margin-top: -10%;
->>>>>>> dataBase
   border: none;
   cursor: pointer;
 }

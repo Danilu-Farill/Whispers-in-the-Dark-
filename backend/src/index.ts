@@ -11,19 +11,11 @@ dotenv.config();
 const app: Application = express();
 const port:number = parseInt(process.env.PORT || "4001");
 app.use(express.json());
-<<<<<<< HEAD
-//app.use(cors());
-=======
 // app.use(cors());
->>>>>>> dataBase
 app.use(cors({
   origin: ['https://whispers-in-the-dark-phi.vercel.app', 'http://localhost:5173'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-<<<<<<< HEAD
-  //credentials: true
-}));
-=======
   credentials: true
 }));
 
@@ -35,7 +27,6 @@ app.use(cors({
 // mongoose.connect(mongoURI)
 //   .then(() => console.log('MongoDB connected'))
 //   .catch((err: Error) => console.error('Connection error', err));
->>>>>>> dataBase
   
 router(app);
 

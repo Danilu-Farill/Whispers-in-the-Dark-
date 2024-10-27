@@ -44,8 +44,6 @@ label {
   font-style: normal;
 }
 
-<<<<<<< HEAD
-=======
 /* Pantallas pequeñas (celulares) */
 @media (max-width: 768px) {
   #email::placeholder, #password::placeholder {
@@ -59,4 +57,3 @@ label {
     font-size: 1.4em;
   }
 }
->>>>>>> dataBase

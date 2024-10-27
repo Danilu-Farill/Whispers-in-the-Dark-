@@ -1,23 +1,5 @@
 {
     "version": 2,
-<<<<<<< HEAD
-    "builds": [
-      {
-        "src": "./index.ts",
-        "use": "@vercel/node",
-        "config": {
-          "zeroConfig": true
-        }
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/index.ts"
-      }
-    ]
-  }
-=======
     "builds": [{
         "src": "./index.ts", 
         "use": "@vercel/node",
@@ -29,4 +11,3 @@
     "routes": [{"src": "/(.*)", "dest": "/index.ts"}]
  
 }
->>>>>>> dataBase

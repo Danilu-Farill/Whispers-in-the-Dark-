@@ -28,11 +28,7 @@
   cursor: pointer;
   font-size: 200%;
 }
-<<<<<<< HEAD
-
-=======
 /* Contenedor principal de las historias */
->>>>>>> dataBase
 .container-stories {
   padding-left: 302px;
   padding-right: 300px;
@@ -42,21 +38,13 @@
   gap: 20px; 
   justify-content: center;
 }
-<<<<<<< HEAD
-  
-=======
 /* Estilo para cada tarjeta de historia */
->>>>>>> dataBase
 .story-card {
   position: relative;
   background-color: #1F3F58;
   color: #A7BA9A;
   padding: 20px;
-<<<<<<< HEAD
-  width: 50%; 
-=======
   width: 100%; /* Tamaño fijo para las tarjetas */
->>>>>>> dataBase
   border-radius: 10px;
   text-align: center;
   cursor: pointer;

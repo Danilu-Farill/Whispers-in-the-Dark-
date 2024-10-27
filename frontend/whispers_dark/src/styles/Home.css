@@ -18,11 +18,8 @@
 }
 .container-home-button {
   padding: 0 50%;
-<<<<<<< HEAD
-=======
   display: flex;
   justify-content: center;
->>>>>>> dataBase
 }
 .homeLink {
   padding: 5px;

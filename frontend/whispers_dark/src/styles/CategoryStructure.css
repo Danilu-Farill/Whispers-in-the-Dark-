@@ -29,18 +29,6 @@
 .container-categories-iconsOrder > div:not(:last-child)::after {
   content: "";
   position: absolute;
-<<<<<<< HEAD
-  right: -15px; 
-  height: 100%; 
-  width: 2px; 
-  background-color: #1F3F58; 
-}
-.iconArrow, .iconFilter, .iconSearch {
-  color: #A7BA9A;
-  display: flex;
-  align-items: center;
-  font-size: 2rem;
-=======
   right: -30px; /* Ajusta la posición de la línea */
   height: 100%; /* Altura de la línea */
   width: 4px; /* Grosor de la línea */
@@ -52,7 +40,6 @@
   display: flex;
   align-items: center;
   font-size: 3rem; /* Ajusta el tamaño de los íconos si es necesario */
->>>>>>> dataBase
   cursor: pointer;  
 }
 .iconArrowText, .iconFilterText{

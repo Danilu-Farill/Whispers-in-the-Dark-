@@ -12,13 +12,8 @@
   font-size: 1em;
   background-color: #3E565F;
   color: #889DA2;
-<<<<<<< HEAD
-  padding: 30px;
-  width: 20%; 
-=======
   padding: 10px;
   width: 20%; /* Tamaño fijo para las tarjetas */
->>>>>>> dataBase
   border-radius: 10px;
   text-align: center;
   cursor: pointer;

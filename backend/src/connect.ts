@@ -1,15 +1,5 @@
 // import mongoose from 'mongoose';
 
-<<<<<<< HEAD
-const mongoURI = process.env.DB_URL;
-if (!mongoURI) {
-  throw new Error('DB_URL no está definido');
-}
-
-mongoose.connect(mongoURI)
-  .then(() => console.log('MongoDB connected'))
-  .catch((err: Error) => console.error('Connection error', err));
-=======
 // const mongoURI = process.env.DB_URL;
 // if (!mongoURI) {
 //   throw new Error('DB_URL no está definido');
@@ -45,4 +35,3 @@ mongoose.connect(mongoURI)
 // //   .then(console.log)
 // //   .catch(console.error)
 // //   .finally(() => client.close());
->>>>>>> dataBase
