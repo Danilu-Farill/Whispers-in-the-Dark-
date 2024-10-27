@@ -13,8 +13,8 @@ export const createUserExistingStory: RequestHandler = async (req:Request, resp:
 
 export const getAllUserExistingStories: RequestHandler = async (req:Request, resp:Response): Promise<any> => {
     try {
-        // const userExistingStories = await UserExistingStory.findAll();
-        // resp.status(200).json(userExistingStories);
+        const userExistingStories = await UserExistingStory.findAll();
+        resp.status(200).json(userExistingStories);
     } catch (error) {
         resp.status(500).json({ message: "Error obteniendo relaciones", error });
     }

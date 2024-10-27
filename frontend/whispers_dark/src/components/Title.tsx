@@ -21,9 +21,9 @@ export const TitleHeader = () => {
         }, []);
   return(
     <>
-        <div className="container-login">
-            <div className="container-register-text">
-              <p className="login-button-init titleDarkComponent"> {letters} </p>
+        <div className="container-title">
+            <div className="container-title-text">
+              <p className="title-text-page titleDarkComponent"> {letters} </p>
             </div>
         </div>
      </>

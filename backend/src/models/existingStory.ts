@@ -17,14 +17,6 @@
             autoIncrement: true,
             // field: 'id_existing',
         },
-        // id_user: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        //     references: {
-        //         model: Story,
-        //         key: 'id_user',
-        //     },
-        // },
         title: {
             type: DataTypes.STRING,
             allowNull: false
@@ -40,7 +32,6 @@
             type: DataTypes.ENUM('Fantasmas', 'Vampiros', 'Zombies', 'Hombres lobo', 'Kikimora', 'Yōkai', 'Brujas', 'Demonios', 'Slenderman', 'Mutantes', 'Bogeyman', 'Duendes'),
             allowNull: false
         }
-
     }, {
         sequelize,
         modelName: "StoryExisting",

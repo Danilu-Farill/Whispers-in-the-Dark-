@@ -80,6 +80,7 @@ const loginUser = (req, resp) => __awaiter(void 0, void 0, void 0, function* () 
         // resp.status(200).json({message:"Usuario encontrado", token,username:loginUser?.username, description:loginUser?.description});       
     }
     catch (error) {
+        console.log("🚀 ~ constloginUser:RequestHandler=async ~ error:", error);
         resp.status(500).json({ message: "Error del servidor" });
     }
 });
@@ -90,6 +91,7 @@ const getAllUsers = (req, resp) => __awaiter(void 0, void 0, void 0, function* (
         resp.status(200).json(user);
     }
     catch (error) {
+        console.log("🚀 ~ constgetAllUsers:RequestHandler=async ~ error:", error);
         resp.status(500).json("Error del servidor");
     }
 });
@@ -102,6 +104,7 @@ const getIdUser = (req, resp) => __awaiter(void 0, void 0, void 0, function* () 
         resp.status(200).json(findUser);
     }
     catch (error) {
+        console.log("🚀 ~ constgetIdUser:RequestHandler=async ~ error:", error);
         resp.status(500).json("Error del servidor");
     }
 });
@@ -120,9 +123,11 @@ const putUser = (req, resp) => __awaiter(void 0, void 0, void 0, function* () {
         }
         const psw = yield createHashValue(password);
         const updateUser = yield users_model_1.default.update({ password: psw, description, username }, { where: { email: email } });
+        console.log("🚀 ~ constputUser:RequestHandler=async ~ updateUser:", updateUser);
         resp.status(200).json({ message: "user update", psw, username, description });
     }
     catch (error) {
+        console.log("🚀 ~ constputUser:RequestHandler=async ~ error:", error);
         resp.status(500).json("Error del servidor");
     }
 });
@@ -137,6 +142,7 @@ const deleteUser = (req, resp) => __awaiter(void 0, void 0, void 0, function* ()
         resp.status(200).json({ message: "Usuario eliminado" });
     }
     catch (error) {
+        console.log("🚀 ~ constdeleteUser:RequestHandler=async ~ error:", error);
         resp.status(500).json("Error del servidor");
     }
 });

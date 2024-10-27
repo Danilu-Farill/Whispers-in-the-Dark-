@@ -4,7 +4,6 @@
 .container-register-button {
   align-content: center;
 }
-
 .register-button-init {
   font-family: "Just Another Hand", cursive;
   font-weight: 400;
@@ -13,7 +12,6 @@
   font-size: 4em;
   text-align: center;
 }
-
 .register-button-opc {
   font-family: "Just Another Hand", cursive;
   font-weight: 400;
@@ -22,16 +20,19 @@
   font-size: 2em;
   text-align: center;
 }
-
 .container-register-form {
   align-items: center;
 }
-
 .register-button-a {
   color: #661D90;
 }
-
 .buttonHomeLink{
   text-decoration: none;
   color: #010020;
+}
+
+@media (max-width: 768px) {
+  .register-button-init {
+    font-size: 2em;
+  }
 }

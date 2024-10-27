@@ -1,31 +1,30 @@
+.container-title-text{
+  text-align: center;
+}
 .titleDarkComponent {
   font-family: "Just Another Hand", cursive;
   font-weight: 400;
   font-style: normal;
   color: #A7BA9A;
-  transform: translateX(10px);
-} 
-      
+  font-size: 500%;
+}    
 .titleDarkComponent .letterComponent {
   position: relative;
   display: inline-block;
-}
-      
+}    
 .titleDarkComponent .letterComponent::before, .titleDarkComponent .letterComponent::after {
 content: "";
 position: absolute;
-width: 2px;
+width: 4px;
 background: rgba(1, 0, 32, 0.7);
 left: 50%;
 transform: translateX(-50%);
 animation: blood 4s infinite ease-in-out;
 }
-
 .titleDarkComponent .letterComponent::before {
   height: 10px;
   top: 50%;
-}
-      
+}     
 .titleDarkComponent .letterComponent::after {
   height: 6px;
   top: 50%;

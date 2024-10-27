@@ -4,12 +4,14 @@
   font-style: normal;
   color: #C869E7;
 } 
+<<<<<<< HEAD
 
+=======
+>>>>>>> dataBase
 .titleDark .letter {
   position: relative;
   display: inline-block;
 }
-
 .titleDark .letter::before, .titleDark .letter::after {
   content: "";
   position: absolute;
@@ -19,18 +21,15 @@
   transform: translateX(-50%);
   animation: blood 4s infinite ease-in-out;
 }
-
 .titleDark .letter::before {
   height: 10px;
   top: 50%;
 }
-
 .titleDark .letter::after {
   height: 6px;
   top: 50%;
   animation-delay: 0.8s;
 }
-
 @keyframes blood {
   0% {
     height: 0;

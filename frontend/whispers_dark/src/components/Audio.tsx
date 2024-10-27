@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import backgroundMusic from '../assets/audio/background-music.mp3';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+<<<<<<< HEAD
 import { faVolumeMute, faVolumeHigh, faPlay } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Audio.css';
 
@@ -50,6 +51,11 @@ import '../styles/Audio.css';
 // };
 
 
+=======
+import { faVolumeMute, faVolumeHigh } from '@fortawesome/free-solid-svg-icons';
+import '../styles/Audio.css';
+
+>>>>>>> dataBase
 export const BackgroundAudio = () => {
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
   const [isMuted, setIsMuted] = useState(false);
@@ -59,7 +65,22 @@ export const BackgroundAudio = () => {
     const bgAudio = new Audio(backgroundMusic);
     bgAudio.loop = true;
     bgAudio.volume = 0.5;
+<<<<<<< HEAD
 
+=======
+    bgAudio.play();
+    // Reproduce el audio cuando el usuario entra en la página
+    const playAudio = () => {
+      if (!isMuted && document.visibilityState === 'visible') {
+        bgAudio.play().catch((error) => {
+          console.error("El navegador bloqueó la reproducción automática", error);
+        });
+      }
+    };
+    // Detecta cambios en la visibilidad de la página
+    document.addEventListener('visibilitychange', playAudio);
+    // Almacena la instancia de audio en el estado
+>>>>>>> dataBase
     setAudio(bgAudio);
     return () => {
       bgAudio.pause();

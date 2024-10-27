@@ -8,6 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.generateStory = void 0;
 const { Configuration, OpenAIApi } = require('openai');
 const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
@@ -21,3 +23,4 @@ const generateStory = (keywords) => __awaiter(void 0, void 0, void 0, function* 
     });
     return response.data.choices[0].text;
 });
+exports.generateStory = generateStory;

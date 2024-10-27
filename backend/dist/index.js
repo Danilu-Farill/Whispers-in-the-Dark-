@@ -18,17 +18,16 @@ const index_router_1 = require("./router/index.router");
 const connection_1 = require("./connection");
 const sequelize_1 = require("./config/sequelize");
 const cors_1 = __importDefault(require("cors"));
+// import { User, UserExistingStory, NewStory, StoryExisting } from './models/index.model'
 // import './models/associations.model';
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = parseInt(process.env.PORT || "4001");
 app.use(express_1.default.json());
-//app.use(cors());
 app.use((0, cors_1.default)({
     origin: ['https://whispers-in-the-dark-phi.vercel.app', 'http://localhost:5173'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
-    //credentials: true
 }));
 (0, index_router_1.router)(app);
 app.get("/", (req, resp) => {

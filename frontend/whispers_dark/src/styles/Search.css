@@ -8,22 +8,31 @@
   justify-content: center;
   align-items: center;
 }
-
 #search {
-  width: 50%;
+  font-family: "Just Another Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+  width: 40%;
   background-color: #345660;
-  padding: 10px
+  padding: 4px;
+  font-size: 2.5rem;
 }
-
 #searchButton {
+  font-family: "Just Another Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
   padding: 10px 20px;
   background-color: #345660;
   color: #A7BA9A;
   border: none;
   cursor: pointer;
-  font-size: 31px;
+  font-size: 200%;
 }
+<<<<<<< HEAD
 
+=======
+/* Contenedor principal de las historias */
+>>>>>>> dataBase
 .container-stories {
   padding-left: 302px;
   padding-right: 300px;
@@ -33,12 +42,21 @@
   gap: 20px; 
   justify-content: center;
 }
+<<<<<<< HEAD
   
+=======
+/* Estilo para cada tarjeta de historia */
+>>>>>>> dataBase
 .story-card {
+  position: relative;
   background-color: #1F3F58;
   color: #A7BA9A;
   padding: 20px;
+<<<<<<< HEAD
   width: 50%; 
+=======
+  width: 100%; /* Tamaño fijo para las tarjetas */
+>>>>>>> dataBase
   border-radius: 10px;
   text-align: center;
   cursor: pointer;
@@ -48,13 +66,11 @@
   height: 500px;
   object-fit: cover;
 }
-
 .iconArrowLeft{
-  transform: translateX(-730px);
+  /* transform: translateX(-730px); */
   color: #A7BA9A;
+  font-size: 48px;
+  margin-left: 10PX;
 }
 
-.iconArrowLeft{
-    font-size: 48px;
-}
 

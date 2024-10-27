@@ -2,12 +2,12 @@
   cursor: url(../assets/image_29.png), auto;
 }
 .container-categories-iconMenu {
-    display: flex;
-    font-size: 3rem;
-    color: #A7BA9A;
-    margin-left: 20px;
-    margin-bottom: 50px;
-    cursor: pointer;
+  display: flex;
+  font-size: 3rem;
+  color: #A7BA9A;
+  margin-left: 20px;
+  margin-bottom: 8%;
+  cursor: pointer;
   }
 .container-categories-iconsOrder {
   color: #A7BA9A;
@@ -20,17 +20,16 @@
   /* border: 1px solid #000; */
   transform: translateY(-100%);
   }
-  
 .container-categories-iconsOrder > div {
   display: flex;
   align-items: center;
   margin: 0 10px; /* Espaciado entre íconos */
   position: relative; /* Necesario para agregar la línea divisoria */
 }
-  
 .container-categories-iconsOrder > div:not(:last-child)::after {
   content: "";
   position: absolute;
+<<<<<<< HEAD
   right: -15px; 
   height: 100%; 
   width: 2px; 
@@ -41,17 +40,32 @@
   display: flex;
   align-items: center;
   font-size: 2rem;
+=======
+  right: -30px; /* Ajusta la posición de la línea */
+  height: 100%; /* Altura de la línea */
+  width: 4px; /* Grosor de la línea */
+  background-color: #1F3F58; /* Color de la línea */
+} 
+/* Estilo para los íconos */
+.iconArrow, .iconFilter{
+  color: #A7BA9A;
+  display: flex;
+  align-items: center;
+  font-size: 3rem; /* Ajusta el tamaño de los íconos si es necesario */
+>>>>>>> dataBase
   cursor: pointer;  
 }
-  
 .iconArrowText, .iconFilterText{
   margin-right: 10px;
+  font-family: "Just Another Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
-
 #iconSearch {
   color: #A7BA9A;
   text-decoration: none;
   margin-right: 30px;
+  font-size: 2.5rem;
 }
 .categories-menu-list{
   font-size: 38px;
@@ -59,7 +73,7 @@
   margin-left: -80px;
   margin-top: 20px;
 }
-
 .categories-option{
   background-color: black;
+  color: #A7BA9A;
 }

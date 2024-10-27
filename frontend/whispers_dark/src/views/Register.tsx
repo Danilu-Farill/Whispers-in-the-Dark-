@@ -6,15 +6,13 @@ import './../styles/LetterBlood.css'
 import { Form } from "../components/Form";
 import { Link } from "react-router-dom";
 import { useRegisterConnection } from "../routes/Register.router";
-// import { IRegisterProps } from "../types/Register.interface";
-
 
 export const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const { registerUser} = useRegisterConnection();
     // const text = "Regístrate para ver contenido exclusivo";
-    const text = "REGÍSTRATE PARA VER CONTENIDO EXCLUSIVO";
+    const text = "REGÍSTRATE PARA VER CONTENIDO";
     const [letters, setLetters] = useState<JSX.Element[]>([]);
     useEffect(() => {
         window.history.pushState(null, "", window.location.href);

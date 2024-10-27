@@ -16,7 +16,6 @@ exports.getStoryCategory = exports.getTitle = exports.getAllStoryExisting = expo
 const existingStory_1 = __importDefault(require("../models/existingStory"));
 const sequelize_1 = require("sequelize");
 const createStory = (req, resp) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log("create story");
     try {
         const { title, description, imageUrl, category } = req.body;
         if (!title || !description || !imageUrl || !category) {
@@ -27,6 +26,7 @@ const createStory = (req, resp) => __awaiter(void 0, void 0, void 0, function* (
             return resp.status(400).json("Título de la historia ya existe");
         }
         const story = yield existingStory_1.default.create({ title, description, imageUrl, category });
+        console.log("🚀 ~ constcreateStory:RequestHandler=async ~ story:", story);
         resp.status(201).json({ message: "Historia creada con éxito" });
     }
     catch (error) {
@@ -46,6 +46,7 @@ const getNewStoryOrder = (req, resp) => __awaiter(void 0, void 0, void 0, functi
         return resp.status(200).json({ message: "Historias ordenadas", findOrder });
     }
     catch (error) {
+        console.log("🚀 ~ getNewStoryOrder ~ error:", error);
         return resp.status(500).json("Error del servidor");
     }
 });
@@ -56,6 +57,7 @@ const getAllStoryExisting = (req, resp) => __awaiter(void 0, void 0, void 0, fun
         resp.status(200).json(story);
     }
     catch (error) {
+        console.log("🚀 ~ constgetAllStoryExisting:RequestHandler=async ~ error:", error);
         resp.status(500).json("Error del servidor");
     }
 });
@@ -77,6 +79,7 @@ const getTitle = (req, resp) => __awaiter(void 0, void 0, void 0, function* () {
         return resp.status(200).json(findTitle);
     }
     catch (error) {
+        console.log("🚀 ~ getTitle ~ error:", error);
         resp.status(500).json("Error del servidor");
     }
 });
@@ -89,6 +92,7 @@ const getStoryCategory = (req, resp) => __awaiter(void 0, void 0, void 0, functi
         return resp.status(200).json({ message: "Historias mas recientes" });
     }
     catch (error) {
+        console.log("🚀 ~ getStoryCategory ~ error:", error);
         return resp.status(500).json("Error del servidor");
     }
 });

@@ -7,7 +7,7 @@ import '../styles/Story.css';
 import { Link } from "react-router-dom";
 
 export const Story = () => {
-    const text = "¿Qué historia quieres escuchar hoy?";
+    const text = "¿Qué historia quieres leer hoy?";
     const [letters, setLetters] = useState<JSX.Element[]>([]);
     useEffect (() => {
         document.body.style.backgroundColor = '#1A1C17';
@@ -35,16 +35,16 @@ export const Story = () => {
             <div className="icon-close">
                 <Link to={'/category'} id="icon-close-text"> <FontAwesomeIcon icon={faXmark} size='3x'/> </Link>
             </div>
-            <div>
+            <div className="container-story-avatar">
                 <img src={avatar} alt="Avatar" className="avatar-face" />
             </div>
-            <div className="container-register-text">
+            <div className="container-story-text">
                 <p className="login-button-init titleDarkStory"> {letters} </p>
             </div>
-            <div>
+            <div className="container-story-input">
                 <input type="text" name="story" id="inputStory" />
             </div>
-            <div>
+            <div className="container-story-button">
                 <button type="button" className="buttonStory">CONTAR HISTORIA</button>
             </div>
         </div>

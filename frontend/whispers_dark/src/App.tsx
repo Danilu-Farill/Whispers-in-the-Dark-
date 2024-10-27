@@ -1,6 +1,11 @@
 import React from 'react';
+<<<<<<< HEAD
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+=======
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Importa 'Routes' en lugar de 'Switch'
+// import './App.css';
+>>>>>>> dataBase
 import { Home } from './views/Home';
 import { Register } from './views/Register';
 import { Login } from './views/Login';

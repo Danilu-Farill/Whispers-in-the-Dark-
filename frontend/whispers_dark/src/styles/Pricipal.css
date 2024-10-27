@@ -6,8 +6,8 @@
 }
  .container-principal-text {
   position: relative;
-  transform: translateX(-50%);
-  margin-top: -40px;
+  /* transform: translateX(-50%); */
+  /* margin-top: -40px; */
  }
 .container-principal-textAll {
   position: relative;
@@ -16,6 +16,9 @@
   font-size: 5em;
   text-align: left;
 }
+.container-principal-title{
+  text-align: center;
+}
 .viewLink {
   text-decoration: none;
   color: #889DA2;
@@ -23,12 +26,11 @@
 .principal-textAll{
   margin-top: 10%;
 }
-
 .faceMonster {
   position: absolute;
   width: 100%;
 }
-.containe-principal-story{
+.container-principal-story{
   position: relative;
   padding-left: 202px;
   padding-right: 200px;
@@ -47,4 +49,32 @@
   border-radius: 10px;
   text-align: center;
   cursor: pointer;
+}
+
+/* Pantallas pequeñas (celulares) */
+@media (max-width: 768px) {
+  .container-principal-story{
+    padding-left: 0;
+    padding-right: 0;
+    gap: 20px; /* Espacio entre los contenedores */
+  }
+  .container-stories-cards{
+    font-size: 1.8em;
+    padding: 20px;
+    width: 140px; /* Tamaño fijo para las tarjetas */
+    border-radius: 8px;
+  }
+  .container-principal-textAll {
+    font-size: 2em;
+  }
+  .principal-textAll{
+    margin-top: 10%;
+    margin-bottom: -25%;
+  }
+  .container-principal-title{
+    margin-top: -35%;
+  }
+  .faceMonster {
+    height: 120vh;
+  }
 }

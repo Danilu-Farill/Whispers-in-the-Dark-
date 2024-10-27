@@ -32,6 +32,7 @@ const createNewStory = (req, resp) => __awaiter(void 0, void 0, void 0, function
             return resp.status(400).json("Título de la historia ya existe");
         }
         const story = yield newStorys_model_1.default.create({ title, description, imageUrl, category, id_user });
+        console.log("🚀 ~ constcreateNewStory:RequestHandler=async ~ story:", story);
         resp.status(201).json({ message: "Historia creada con éxito" });
     }
     catch (error) {
@@ -46,6 +47,7 @@ const getNewStories = (req, resp) => __awaiter(void 0, void 0, void 0, function*
         return resp.status(200).json({ message: "Todas las historias mas recientes", newStories });
     }
     catch (error) {
+        console.log("🚀 ~ getNewStories ~ error:", error);
         return resp.status(500).json("Error del servidor");
     }
 });
@@ -55,6 +57,7 @@ const getIdNewStories = (req, resp) => __awaiter(void 0, void 0, void 0, functio
         return resp.status(200).json({ message: "Historias mas recientes" });
     }
     catch (error) {
+        console.log("🚀 ~ getNewStories ~ error:", error);
         return resp.status(500).json("Error del servidor");
     }
 });
@@ -70,21 +73,19 @@ const getNewStoryCategory = (req, resp) => __awaiter(void 0, void 0, void 0, fun
         if (!findEmailUser) {
             return resp.status(404).json("No se encontró el email");
         }
-        const id_user = findEmailUser.id_user; // Obten el id_user
-        console.log("hola2");
+        const id_user = findEmailUser.id_user; // Obten el id_use
         console.log("id_user:", id_user);
         console.log("email:", email);
         console.log("category:", category);
         const findNewStoryCategory = yield newStorys_model_1.default.findAll({ where: { id_user, category: category } });
         console.log("hola3");
         if (!findNewStoryCategory.length) {
-            console.log("hola1");
             return resp.status(404).json({ message: "No se encontraron historias con la categoría especificada" });
         }
-        console.log("hola4");
         return resp.status(200).json({ message: "Historias mas recientes", findNewStoryCategory });
     }
     catch (error) {
+        console.log("🚀 ~ getNewStories ~ error:", error);
         return resp.status(500).json("Error del servidor");
     }
 });
@@ -100,6 +101,7 @@ const getNewStoryOrder = (req, resp) => __awaiter(void 0, void 0, void 0, functi
         return resp.status(200).json({ message: "Historias ordenadas", findOrder });
     }
     catch (error) {
+        console.log("🚀 ~ getNewStories ~ error:", error);
         return resp.status(500).json("Error del servidor");
     }
 });
@@ -109,6 +111,7 @@ const putNewStories = (req, resp) => __awaiter(void 0, void 0, void 0, function*
         return resp.status(200).json({ message: "Historias mas recientes" });
     }
     catch (error) {
+        console.log("🚀 ~ getNewStories ~ error:", error);
         return resp.status(500).json("Error del servidor");
     }
 });
@@ -118,6 +121,7 @@ const deleteNewStories = (req, resp) => __awaiter(void 0, void 0, void 0, functi
         return resp.status(200).json({ message: "Historias mas recientes" });
     }
     catch (error) {
+        console.log("🚀 ~ getNewStories ~ error:", error);
         return resp.status(500).json("Error del servidor");
     }
 });

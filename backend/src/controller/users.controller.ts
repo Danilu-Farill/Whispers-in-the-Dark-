@@ -2,7 +2,7 @@ import { Request, Response, RequestHandler } from 'express';
 import User from '../models/users.model';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import dotenv, { config } from "dotenv";
+import dotenv from "dotenv";
 dotenv.config();
 
 const createHashValue = async(value:string): Promise<string> =>{
@@ -40,8 +40,7 @@ export const createUser: RequestHandler = async(req:Request, resp:Response): Pro
         const user = await User.create({ email, password: pswHash});
         resp.status(201).json(user);
     } catch (error) {
-        console.log("Aqui esta el error:",error);
-        
+        console.log("Aqui esta el error:", error);
         resp.status(500).json("Error del servidor")    
     }
 };
@@ -70,6 +69,7 @@ export const loginUser: RequestHandler = async(req:Request, resp:Response): Prom
          resp.status(200).json({message:"Usuario encontrado", token, email});       
         // resp.status(200).json({message:"Usuario encontrado", token,username:loginUser?.username, description:loginUser?.description});       
     } catch (error) {
+        console.log("🚀 ~ constloginUser:RequestHandler=async ~ error:", error)
         resp.status(500).json({ message: "Error del servidor" }); 
     }
 };
@@ -79,6 +79,7 @@ export const getAllUsers: RequestHandler = async(req:Request, resp:Response): Pr
         const user = await User.findAll();
         resp.status(200).json(user);
     } catch (error) {
+        console.log("🚀 ~ constgetAllUsers:RequestHandler=async ~ error:", error)
         resp.status(500).json("Error del servidor")    
     }
 };
@@ -90,6 +91,7 @@ export const getIdUser: RequestHandler = async(req:Request, resp:Response): Prom
         const findUser = await User.findOne({where: {email: email}});
         resp.status(200).json(findUser);
     } catch (error) {
+        console.log("🚀 ~ constgetIdUser:RequestHandler=async ~ error:", error)
         resp.status(500).json("Error del servidor")    
     }
 }
@@ -108,8 +110,10 @@ export const putUser: RequestHandler = async(req:Request, resp:Response): Promis
         }        
         const psw = await createHashValue(password);
         const updateUser = await User.update({password: psw, description, username}, {where:{email: email}});
+        console.log("🚀 ~ constputUser:RequestHandler=async ~ updateUser:", updateUser)
         resp.status(200).json({message: "user update", psw, username, description});
     } catch (error) {
+        console.log("🚀 ~ constputUser:RequestHandler=async ~ error:", error)
         resp.status(500).json("Error del servidor")    
     }
 }
@@ -123,6 +127,7 @@ export const deleteUser: RequestHandler = async(req:Request, resp:Response): Pro
         }
         resp.status(200).json({message: "Usuario eliminado"});
     } catch (error) {
+        console.log("🚀 ~ constdeleteUser:RequestHandler=async ~ error:", error)
         resp.status(500).json("Error del servidor")    
     }
 }

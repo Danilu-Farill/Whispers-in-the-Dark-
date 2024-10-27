@@ -38,10 +38,10 @@ export const Login = () => {
             <div className="container-login-header">
               <Header/>
             </div>
-            <div className="container-register-text">
+            <div className="container-login-text">
               <p className="login-button-init titleDark"> {letters} </p>
             </div>
-            <div >
+            <div className="container-login-avatar">
               <img src={avatar} alt="Avatar" className="avatar-faceLogin" />
             </div>
             <div className="container-login-form">
