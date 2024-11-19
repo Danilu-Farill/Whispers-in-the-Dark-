@@ -127,8 +127,7 @@ const putUser = (req, resp) => __awaiter(void 0, void 0, void 0, function* () {
         resp.status(200).json({ message: "user update", psw, username, description });
     }
     catch (error) {
-        console.log("🚀 ~ constputUser:RequestHandler=async ~ error:", error);
-        resp.status(500).json("Error del servidor");
+        resp.status(500).json({ message: "Error del servidor", error });
     }
 });
 exports.putUser = putUser;

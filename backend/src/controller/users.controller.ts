@@ -113,8 +113,7 @@ export const putUser: RequestHandler = async(req:Request, resp:Response): Promis
         console.log("🚀 ~ constputUser:RequestHandler=async ~ updateUser:", updateUser)
         resp.status(200).json({message: "user update", psw, username, description});
     } catch (error) {
-        console.log("🚀 ~ constputUser:RequestHandler=async ~ error:", error)
-        resp.status(500).json("Error del servidor")    
+        resp.status(500).json({message: "Error del servidor", error})    
     }
 }
 
