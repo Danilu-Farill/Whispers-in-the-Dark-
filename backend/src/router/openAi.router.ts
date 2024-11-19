@@ -8,6 +8,6 @@ const routerCloudinary: Router = express.Router();
 // Ruta para subir una imagen (ya configurada)
 routerCloudinary.post("/create", upload.single("image"), createStory);
 // Nueva ruta para generar historias con IA
-routerCloudinary.post("/generate", generateStory);
+// routerCloudinary.post("/generate", generateStory);
 
 export { routerCloudinary };
