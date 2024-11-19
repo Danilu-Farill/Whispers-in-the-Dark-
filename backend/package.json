@@ -8,7 +8,7 @@
     "start": "npx tsc && node ./build/index.js",
     "dev": "concurrently \"tsc --watch\" \"ts-node-dev --respawn ./src/index.ts\"",
     "lint": "eslint .",
-    "vercel-build": "tsc"
+    "vercel-build": "tsc --allow-write"
   },
   "keywords": [],
   "author": "",
