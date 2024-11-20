@@ -1,7 +1,7 @@
 export const usePrincipalConnection = () => {
-  const pricipalStories = async () => {
+  const pricipalStories = async() => {
     try {
-      const response = await fetch(`http://localhost:4000/home/story`, {
+      const response = await fetch(`https://whispers-in-the-dark.onrender.com/home/story`, {
         method: "GET",
         // mode: 'cors',
         headers: {
@@ -10,7 +10,7 @@ export const usePrincipalConnection = () => {
       });
       if(!response.ok) {
         const errorData = await response.json();
-        console.log("🚀 ~ pricipalUser ~ response:", errorData)
+        console.log("🚀 ~ pricipalUser ~ response:", errorData);
         throw new Error(errorData.message);
       }
       const data = await response.json();
@@ -19,6 +19,6 @@ export const usePrincipalConnection = () => {
     catch (error) {
       console.error("Error al registrar al usuario", error);
     }
-}
-    return { pricipalStories };
-}
+  };
+  return { pricipalStories };
+};

@@ -3,9 +3,9 @@ import { IUser } from "../types/Register.interface";
 
 export const useLoginConnection = () => {
   const navigate = useNavigate();
-  const loginUser = async ({email, password}: IUser) => {
+  const loginUser = async({email, password}: IUser) => {
     try {
-      const response = await fetch(`http://localhost:4000/home/users/login`, {
+      const response = await fetch(`https://whispers-in-the-dark.onrender.com/home/login`, {
         method: "POST",
         // mode: 'cors',
         headers: {
@@ -16,18 +16,17 @@ export const useLoginConnection = () => {
       });
       if(!response.ok) {
         const errorData = await response.json();
-        console.log("🚀 ~ loginUser ~ response:", errorData)
         throw new Error(errorData.message);
       }
       const data = await response.json();
-      console.log("🚀 ~ loginConnection ~ data:", data)
-      console.log("🚀 ~ loginConnection ~ data:email", data.email)
+      console.log("🚀 ~ loginConnection ~ data:", data);
+      console.log("🚀 ~ loginConnection ~ data:email", data.email);
       localStorage.setItem("username", data.email);
       navigate("/principal");
     }
     catch (error) {
       console.error("Error al registrar al usuario", error);
     }
-}
-    return { loginUser };
-}
+  };
+  return { loginUser };
+};

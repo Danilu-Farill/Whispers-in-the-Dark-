@@ -53,7 +53,7 @@
 //       <div className="container-home -audio">
 //         <div className="audio-controls">
 //           <button onClick={playAudio} className="play-button">
-//             {isPlaying ? 
+//             {isPlaying ?
 //               <FontAwesomeIcon icon={faVolumeHigh} size="2x" color="#0541AF" /> :
 //               <FontAwesomeIcon icon={faPlay} size="2x" color="#0541AF" />}
 //           </button>
