@@ -11,13 +11,14 @@ dotenv.config();
 const app: Application = express();
 const port = process.env.PORT || 3000;
 const frontendUrl = process.env.FRONTEND_URL;
-if (!frontendUrl) {
-  throw new Error('FRONTEND_URL no está definido');
+const backendUrl = process.env.BACKEND_URL;
+if (!frontendUrl || !backendUrl) {
+  throw new Error('FRONTEND_URL o BACKEND_URL no estan definidos');
 }
 app.use(express.json());
 // app.use(cors());
 app.use(cors({
-  origin: [frontendUrl, 'http://localhost:5173'],
+  origin: [frontendUrl, backendUrl, 'http://localhost:5173'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
