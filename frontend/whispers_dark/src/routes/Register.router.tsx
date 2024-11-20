@@ -7,6 +7,7 @@ export const useRegisterConnection = () => {
     try {
       const response = await fetch(`https://whispers-in-the-dark.onrender.com/home/users/create`, {
         method: "POST",
+        mode: 'cors',
           headers: {
             "Content-Type": "application/json",
           },
