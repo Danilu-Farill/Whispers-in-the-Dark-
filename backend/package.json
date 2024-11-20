@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx tsc && node ./build/index.js",
+    "start": "npx tsc && node ./dist/index.js",
     "dev": "concurrently \"tsc --watch\" \"ts-node-dev --respawn ./src/index.ts\"",
     "lint": "eslint .",
+    "build": "npx tsc",
     "vercel-build": "chmod +x node_modules/.bin/tsc && npm install && tsc"
   },
   "keywords": [],

@@ -22,11 +22,15 @@ const cors_1 = __importDefault(require("cors"));
 // import './models/associations.model';
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-const port = parseInt(process.env.PORT || "4001");
+const port = process.env.PORT || 3000;
+const frontendUrl = process.env.FRONTEND_URL;
+if (!frontendUrl) {
+    throw new Error('FRONTEND_URL no está definido');
+}
 app.use(express_1.default.json());
 // app.use(cors());
 app.use((0, cors_1.default)({
-    origin: ['https://whispers-in-the-dark-phi.vercel.app', 'http://localhost:5173'],
+    origin: [frontendUrl, 'http://localhost:5173'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
