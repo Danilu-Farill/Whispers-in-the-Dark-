@@ -5,7 +5,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-export const generateStory = async (keywords: string) => {
+export const generateStory = async(keywords: string) => {
   const response = await openai.createCompletion({
     model: 'text-davinci-003',
     prompt: `Crea una historia de terror con los siguientes temas: ${keywords}`,

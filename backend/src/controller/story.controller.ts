@@ -3,7 +3,7 @@ import cloudinary from "../config/cloudinary";
 import StoryExisting from "../models/existingStory";
 import fs from "fs"; // Para eliminar el archivo temporal
 
-export const createStory = async (req: Request, res: Response): Promise<void> => {
+export const createStory = async(req: Request, res: Response): Promise<void> => {
   try {
     const file = req.file; // Multer almacena el archivo aquí
     if (!file) {

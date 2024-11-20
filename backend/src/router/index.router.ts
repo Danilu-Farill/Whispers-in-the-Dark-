@@ -6,8 +6,8 @@ import express, {Application, Router} from "express";
 import { routerUserExistingStory } from "./userExistingStory";
 
 function router(app:Application): void {
-  const routes: Router = express.Router(); 
-  app.use('/home', routes);  
+  const routes: Router = express.Router();
+  app.use('/home', routes);
   routes.use('/users', routerUsers);
   routes.use('/story', routerExisting);
   routes.use('/newStory', routerNewStory);

@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { openai } from "../config/openai.config";
 
-export const generateStory = async (req: Request, res: Response) => {
+export const generateStory = async(req: Request, res: Response) => {
   try {
     const { prompt } = req.body;  // El usuario puede enviar un tema o palabra clave
 
@@ -19,10 +19,10 @@ export const generateStory = async (req: Request, res: Response) => {
 
     const story = response.data.choices[0].text;
 
-    res.status(200).json({story: story.trim(),});  // Historia generada
+    res.status(200).json({story: story.trim()});  // Historia generada
   } catch (error) {
     console.error(error);
-    res.status(500).json({message: "Error generando la historia.",});
+    res.status(500).json({message: "Error generando la historia."});
   }
 };
 

@@ -32,13 +32,13 @@ UserExistingStory.init({
   modelName: "UserExistingStory",
   tableName: "user_existing_stories",
   timestamps: false,
-    // Elimina columnas generadas automáticamente
+  // Elimina columnas generadas automáticamente
   indexes: [
     {
       unique: true,
-      fields: ['id_user', 'id_existing']
-    }
-  ]
+      fields: ['id_user', 'id_existing'],
+    },
+  ],
 });
 
 // Relación many-to-many entre User y ExistingStory

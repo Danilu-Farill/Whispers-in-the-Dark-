@@ -21,7 +21,7 @@ app.use(cors({
   origin: [frontendUrl, backendUrl, 'http://localhost:5173'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
+  credentials: true,
 }));
 
 // const mongoURI = process.env.DB_URL;
@@ -32,14 +32,13 @@ app.use(cors({
 // mongoose.connect(mongoURI)
 //   .then(() => console.log('MongoDB connected'))
 //   .catch((err: Error) => console.error('Connection error', err));
-  
 router(app);
 
 app.get("/", (req: Request, resp: Response) => {
-  resp.send("localhost 4000")
+  resp.send("localhost 4000");
 });
 
-const startServer = async () => {
+const startServer = async() => {
   try {
     await testConnection();
     console.log('Database connected');

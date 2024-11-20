@@ -2,7 +2,7 @@
 // import { IStory } from "../interface/interface";
 
 // export class StoryService {
-  
+
 //   // Obtener todas las historias
 //   async getAllStories(): Promise<IStory[]> {
 //     return Story.find();
