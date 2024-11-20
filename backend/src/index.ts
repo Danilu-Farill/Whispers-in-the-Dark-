@@ -9,11 +9,15 @@ import cors from 'cors';
 
 dotenv.config();
 const app: Application = express();
-const port:number = parseInt(process.env.PORT || "4001");
+const port = process.env.PORT || 3000;
+const frontendUrl = process.env.FRONTEND_URL;
+if (!frontendUrl) {
+  throw new Error('FRONTEND_URL no está definido');
+}
 app.use(express.json());
 // app.use(cors());
 app.use(cors({
-  origin: ['https://whispers-in-the-dark-phi.vercel.app', 'http://localhost:5173'],
+  origin: [frontendUrl, 'http://localhost:5173'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
