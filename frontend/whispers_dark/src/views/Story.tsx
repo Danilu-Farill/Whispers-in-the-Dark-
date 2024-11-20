@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import { Header } from "../components/Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -7,47 +7,47 @@ import '../styles/Story.css';
 import { Link } from "react-router-dom";
 
 export const Story = () => {
-    const text = "¿Qué historia quieres leer hoy?";
-    const [letters, setLetters] = useState<JSX.Element[]>([]);
-    useEffect (() => {
-        document.body.style.backgroundColor = '#1A1C17';
-        window.history.pushState(null, "", window.location.href);
-        window.history.replaceState(null, "", window.location.href);
-        const letterElements = text.split("").map((letter, index) => {
-            const isSpace = letter === " ";
-            return(
-                <span key={index} className="letterStory">
-                  {isSpace ? '\u00A0' : letter} 
-                </span>
-            )
-          });
-              setLetters(letterElements);
-              return() => {
-                  document.body.style.backgroundColor = "";
-              }
-            }, []);
-    return(
-        <>
+  const text = "¿Qué historia quieres leer hoy?";
+  const [letters, setLetters] = useState<JSX.Element[]>([]);
+  useEffect (() => {
+    document.body.style.backgroundColor = '#1A1C17';
+    window.history.pushState(null, "", window.location.href);
+    window.history.replaceState(null, "", window.location.href);
+    const letterElements = text.split("").map((letter, index) => {
+      const isSpace = letter === " ";
+      return(
+        <span key={index} className="letterStory">
+          {isSpace ? '\u00A0' : letter}
+        </span>
+      );
+    });
+    setLetters(letterElements);
+    return() => {
+      document.body.style.backgroundColor = "";
+    };
+  }, []);
+  return(
+    <>
+      <div>
         <div>
-            <div>
-                <Header/>
-            </div>
-            <div className="icon-close">
-                <Link to={'/category'} id="icon-close-text"> <FontAwesomeIcon icon={faXmark} size='3x'/> </Link>
-            </div>
-            <div className="container-story-avatar">
-                <img src={avatar} alt="Avatar" className="avatar-face" />
-            </div>
-            <div className="container-story-text">
-                <p className="login-button-init titleDarkStory"> {letters} </p>
-            </div>
-            <div className="container-story-input">
-                <input type="text" name="story" id="inputStory" />
-            </div>
-            <div className="container-story-button">
-                <button type="button" className="buttonStory">CONTAR HISTORIA</button>
-            </div>
+          <Header/>
         </div>
-        </>
-    )
-}
+        <div className="icon-close">
+          <Link to={'/category'} id="icon-close-text"> <FontAwesomeIcon icon={faXmark} size='3x'/> </Link>
+        </div>
+        <div className="container-story-avatar">
+          <img src={avatar} alt="Avatar" className="avatar-face" />
+        </div>
+        <div className="container-story-text">
+          <p className="login-button-init titleDarkStory"> {letters} </p>
+        </div>
+        <div className="container-story-input">
+          <input type="text" name="story" id="inputStory" />
+        </div>
+        <div className="container-story-button">
+          <button type="button" className="buttonStory">CONTAR HISTORIA</button>
+        </div>
+      </div>
+    </>
+  );
+};
