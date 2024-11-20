@@ -12,18 +12,18 @@ import { ViewStories } from './views/ViewStories';
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/register' element={<Register/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/principal' element={<Principal  />}/>
-        <Route path='/category' element={<Categories/>}/>
-        <Route path='/search' element={<Search/>}/>
-        <Route path='/story' element={<Story/>}/>
-        <Route path='/view/:title' element={<ViewStories/>}/>
-      </Routes>
-    </Router>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/register' element={<Register/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/principal' element={<Principal  />}/>
+          <Route path='/category' element={<Categories/>}/>
+          <Route path='/search' element={<Search/>}/>
+          <Route path='/story' element={<Story/>}/>
+          <Route path='/view/:title' element={<ViewStories/>}/>
+        </Routes>
+      </Router>
   );
 };
 

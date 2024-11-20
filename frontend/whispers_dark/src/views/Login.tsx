@@ -13,7 +13,6 @@ export const Login = () => {
     const text = "INICIAR SESIÓN";
     const [letters, setLetters] = useState<JSX.Element[]>([]);
     useEffect(() => {
-      window.
       document.body.style.backgroundColor ="#1A2F4C";
       const letterElements = text.split("").map((letter, index) => {
         const isSpace = letter === " ";

@@ -90,3 +90,13 @@ export const CategoryStructure = () => {
         </>
     )
 }
+
+
+
+
+/*
+ <select>
+            <option value="someOption">Una opción</option>
+            <option value="otherOption">Otra opción</option>
+          </select>
+*/
