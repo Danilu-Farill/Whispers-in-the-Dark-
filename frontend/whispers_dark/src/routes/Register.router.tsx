@@ -5,7 +5,7 @@ export const useRegisterConnection = () => {
   const navigate = useNavigate();
   const registerUser = async ({email, password}: IUser) => {
     try {
-      const response = await fetch(`http://localhost:4000/home/users/create`, {
+      const response = await fetch(`https://whispers-in-the-dark.onrender.com/home/users/create`, {
         method: "POST",
           headers: {
             "Content-Type": "application/json",
