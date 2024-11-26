@@ -1,7 +1,7 @@
 import React from 'react';
-import { StoryCardProps } from '../types/Menu';
+import {  StoryCardPropsSearch } from '../types/Menu';
 
-const StoryCard: React.FC<StoryCardProps> = ({ title, onClick }) => {
+const StoryCard: React.FC<StoryCardPropsSearch> = ({ title, onClick }) => {
   return (
     <div className='container-categories-cards' onClick={onClick}>
       <h2>{title}</h2>

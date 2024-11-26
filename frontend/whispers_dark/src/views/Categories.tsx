@@ -11,7 +11,7 @@ import StoryCard from '../components/StoryCard';
 import { useNavigate } from 'react-router-dom';
 import { StoryCardProps } from '../types/Menu';
 import { usePrincipalConnection } from '../routes/principal.router';
-import { Order } from '../components/order';
+import { Order } from '../components/Order';
 import { Filter } from '../components/Filter';
 import { TitleHeader } from '../components/Title';
 
@@ -27,7 +27,7 @@ export const Categories = () => {
   useEffect(()=> {
     const fetchStories = async() =>{
       //ejemplo:
-      const stor: StoryCardProps[] = [ { title: "cabra" }, { title: "perro" }, { title: "gato" }, { title: "ave" }, { title: "boa" }, { title: "raton" }, { title: "flor" }, { title: "rosa" }, { title: "violeta" },]
+      const stor: StoryCardProps[] = [ { title: "cabra" }, { title: "perro" }, { title: "gato" }, { title: "ave" }, { title: "boa" }, { title: "raton" }, { title: "flor" }, { title: "rosa" }, { title: "violeta" }];
       const data = await pricipalStories();
       if(data) {
         setStory([...stor, ...data]);
