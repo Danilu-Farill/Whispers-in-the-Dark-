@@ -11,3 +11,5 @@ exports.routerExisting = routerExisting;
 routerExisting.get('/', existings_controller_1.getAllStoryExisting);
 routerExisting.post('/', existings_controller_1.createStory);
 routerExisting.get('/title/:title', existings_controller_1.getTitle);
+// routerExisting.get('/order', getNewStoryOrder)
+routerExisting.put('/:id_existing', existings_controller_1.putStory);

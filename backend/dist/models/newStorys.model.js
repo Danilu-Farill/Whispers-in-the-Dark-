@@ -20,32 +20,32 @@ NewStory.init({
         allowNull: false,
         references: {
             model: users_model_1.default,
-            key: 'id_user',
+            key: "id_user",
         },
     },
     title: {
         type: sequelize_1.DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
     description: {
         type: sequelize_1.DataTypes.TEXT,
-        allowNull: false
+        allowNull: false,
     },
     imageUrl: {
         type: sequelize_1.DataTypes.TEXT,
     },
     category: {
-        type: sequelize_1.DataTypes.ENUM('Fantasmas', 'Vampiros', 'Zombies', 'Hombres lobo', 'Kikimora', 'Yōkai', 'Brujas', 'Demonios', 'Slenderman', 'Mutantes', 'Bogeyman', 'Duendes'),
-        allowNull: false
-    }
+        type: sequelize_1.DataTypes.ENUM("Fantasmas", "Vampiros", "Zombies", "Hombres lobo", "Kikimora", "Yōkai", "Brujas", "Demonios", "Slenderman", "Mutantes", "Bogeyman", "Duendes"),
+        allowNull: false,
+    },
 }, {
     sequelize: sequelize_2.sequelize,
     modelName: "NewStory",
     tableName: "newStories",
-    timestamps: false
+    timestamps: false,
 });
 // Relación con el modelo User
-users_model_1.default.hasMany(NewStory, { foreignKey: 'id_user' });
-NewStory.belongsTo(users_model_1.default, { foreignKey: 'id_user' });
+users_model_1.default.hasMany(NewStory, { foreignKey: "id_user" });
+NewStory.belongsTo(users_model_1.default, { foreignKey: "id_user" });
 // NewStory.belongsTo(User, { foreignKey: 'id_user' });
 exports.default = NewStory;

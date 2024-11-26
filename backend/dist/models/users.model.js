@@ -20,8 +20,8 @@ User.init({
     },
 }, {
     sequelize: sequelize_2.sequelize,
-    modelName: 'users',
-    tableName: 'users',
+    modelName: "users",
+    tableName: "users",
     timestamps: false,
 });
 exports.default = User;

@@ -37,9 +37,9 @@ UserExistingStory.init({
     indexes: [
         {
             unique: true,
-            fields: ['id_user', 'id_existing']
-        }
-    ]
+            fields: ['id_user', 'id_existing'],
+        },
+    ],
 });
 // Relación many-to-many entre User y ExistingStory
 users_model_1.default.belongsToMany(existingStory_1.default, { through: UserExistingStory, foreignKey: 'id_user' });

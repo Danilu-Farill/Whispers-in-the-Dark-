@@ -13,23 +13,23 @@ StoryExisting.init({
     },
     title: {
         type: sequelize_1.DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
     description: {
         type: sequelize_1.DataTypes.TEXT,
-        allowNull: false
+        allowNull: false,
     },
     imageUrl: {
         type: sequelize_1.DataTypes.TEXT,
     },
     category: {
-        type: sequelize_1.DataTypes.ENUM('Fantasmas', 'Vampiros', 'Zombies', 'Hombres lobo', 'Kikimora', 'Yōkai', 'Brujas', 'Demonios', 'Slenderman', 'Mutantes', 'Bogeyman', 'Duendes'),
-        allowNull: false
-    }
+        type: sequelize_1.DataTypes.ENUM("Fantasmas", "Vampiros", "Zombies", "Hombres lobo", "Kikimora", "Yōkai", "Brujas", "Demonios", "Slenderman", "Mutantes", "Bogeyman", "Duendes"),
+        allowNull: false,
+    },
 }, {
     sequelize: sequelize_2.sequelize,
     modelName: "StoryExisting",
     tableName: "existings",
-    timestamps: false
+    timestamps: false,
 });
 exports.default = StoryExisting;
