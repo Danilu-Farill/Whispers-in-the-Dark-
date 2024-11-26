@@ -1,16 +1,20 @@
-const { Configuration, OpenAIApi } = require('openai');
+import OpenAI from 'openai';
+import dotenv from "dotenv";
 
-const configuration = new Configuration({
+dotenv.config();
+
+const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
-const openai = new OpenAIApi(configuration);
 
 export const generateStory = async(keywords: string) => {
-  const response = await openai.createCompletion({
+  const response = await openai.completions.create({
     model: 'text-davinci-003',
     prompt: `Crea una historia de terror con los siguientes temas: ${keywords}`,
     max_tokens: 500,
   });
 
-  return response.data.choices[0].text;
+  return response.choices[0].text;
 };
+
+export { openai };
