@@ -13,7 +13,6 @@ export const Login = () => {
   const text = "INICIAR SESIÓN";
   const [letters, setLetters] = useState<JSX.Element[]>([]);
   useEffect(() => {
-    document.body.style.backgroundColor ="#1A2F4C";
     const letterElements = text.split("").map((letter, index) => {
       const isSpace = letter === " ";
       return(
@@ -23,9 +22,6 @@ export const Login = () => {
       );
     });
     setLetters(letterElements);
-    return() => {
-      document.body.style.backgroundColor = "";
-    };
   }, []);
   const hadleLogin = async() => {
     console.log( "datos comparados:", email, password);

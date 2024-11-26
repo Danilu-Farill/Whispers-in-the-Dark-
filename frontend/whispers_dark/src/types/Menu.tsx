@@ -5,7 +5,7 @@ export interface MenuItem {
 
 export interface IFilter {
   label: string;
-  valor: string;
+  value: string;
 }
 
 export interface IOrder {

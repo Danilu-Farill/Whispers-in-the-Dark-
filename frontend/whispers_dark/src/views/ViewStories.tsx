@@ -14,7 +14,6 @@ export const ViewStories = () => {
   useEffect(() => {
     window.history.pushState(null, '', window.location.href);
     window.history.replaceState(null, '', window.location.href);
-    document.body.style.backgroundColor = '#1A1C17';
     const fetchStory = async() => {
       const data = await pricipalStories();
       if (data) {
@@ -24,7 +23,6 @@ export const ViewStories = () => {
     };
     fetchStory();
     return() => {
-      document.body.style.backgroundColor = "";
     };
   }, [title]);
   if (!story) {
@@ -50,3 +48,4 @@ export const ViewStories = () => {
     </>
   );
 };
+/*REVISAR LA PARTE DE HASTA ABAJO NO LLEGA EL COLOR DE FONDO */

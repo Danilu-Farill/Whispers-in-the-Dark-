@@ -9,7 +9,7 @@ export const TitleHeader = () => {
     const letterElements = text.split("").map((letter, index) => {
       const isSpace = letter === " ";
       return(
-        <span key={index} className="letterComponent">
+        <span key={index} className="letter">
           {isSpace ? '\u00A0' : letter}
         </span>
       );
@@ -23,7 +23,7 @@ export const TitleHeader = () => {
     <>
       <div className="container-title">
         <div className="container-title-text">
-          <p className="title-text-page titleDarkComponent"> {letters} </p>
+          <p className="title-button-init titleDark"> {letters} </p>
         </div>
       </div>
     </>

@@ -1,17 +1,23 @@
 .container-viewStories-screen{
-    background-color: #411A1B;
-    padding: 10%;
-    margin: 10%;
+  background-color: #1A2F4C;
+  padding: 5%;
+  margin: 4%;
+  text-align: center;
 }
 
 .story-details-description{
-    color: #345C75;
-    font-size: 2em;
+  color: #A7BA9A;
+  font-size: 2em;
+  font-weight: 100;
+  letter-spacing: 1px;
+  text-align: justify;
 }
 .story-details-title{
-    color: #0F1217;
-    font-size: 4em;
+  color: #0F1217;
+  font-size: 4em;
+  text-align: center;
 }
 .story-details-imagen{
-  width: 100%;
+  width: 80%;
+  height: 500px;
 }
