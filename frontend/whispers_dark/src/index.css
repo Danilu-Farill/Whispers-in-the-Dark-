@@ -1,9 +1,6 @@
 /*ESTE INDEX ES PARA MAIN.TSX*/
 *{
   box-sizing: border-box;
-}
-body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  padding: 0;
 }

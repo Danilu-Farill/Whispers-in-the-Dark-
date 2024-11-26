@@ -1,116 +1,84 @@
-#inputStory { 
-  font-size: 2em;
-  font-family: "Just Another Hand", cursive;
-  font-weight: 400;
-  border-radius: 2px; 
-  background-color: #411A1B;
-  width: 50%;
-  border: none;
-  margin-top: 2%;
-}
-.buttonStory{
-  border-radius: 20px;
-  font-size: 2em;
-  border: none;
-  width: 40%;
-  height: 5vh;
-  color: #345C75;
-  background-color: #474048;
-  font-family: "Just Another Hand", cursive;
-  font-weight: 600;
-  font-style: normal;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  letter-spacing: 4px;
-}
-.container-story-avatar{
-  text-align: center;
-}
-.container-story-text{
-  text-align: center;
-}
-.container-story-input{
-  text-align: center;
-}
-.container-story-button{
-  text-align: center;
-}
-.avatar-face {
-  /* margin-top: 5%; */
-  width: 20%;
-  margin-bottom: 5%;
-}
 .icon-close{
   display: flex;
-  position: relative;
   margin-left: 2%;
-  border: none;
   background-color: transparent;
-  border-radius: 10px; 
-  cursor: pointer;   
+  margin-top: -5%;
+  cursor: pointer;
+  position: relative;
 }
 #icon-close-text {
   color: black;
   cursor: pointer;
 }
-.titleDarkStory {
+.container-story-avatar{
+  text-align: center;
+  margin-top: 5%;
+}
+.avatar-face {
+  margin-top: -2%;
+  width: 10%;
+  margin-bottom: 1%;
+}
+.container-story-text{
+  text-align: center;
+}
+.story-button-init{
   font-size: 4em;
+}
+.container-story-input{
+  margin-top: 1%;
+  text-align: center;
+}
+.container-story-input input[value]{
+  color: #A7BA9A;
+}
+#inputStory { 
+  font-size: 2rem;
   font-family: "Just Another Hand", cursive;
   font-weight: 400;
+  border-radius: 6px; 
+  background-color: #1F3F58;
+  width: 25%;
+  border: none;
+  margin-top: 2%;
+  text-align: center;
+}
+.container-story-button{
+  text-align: center;
+  margin-top: -2%;
+}
+.container-story-button button{
+  height: 8vh;
+}
+.buttonStory{
+  border-radius: 15px;
+  font-size: 2rem;
+  border: none;
+  width: 15%;
+  color: #458584;
+  background-color: #345660;
+  font-family: "Just Another Hand", cursive;
+  font-weight: 600;
   font-style: normal;
-  color: white;
-} 
-.titleDarkStory .letterStory {
-  position: relative;
-  display: inline-block;
-} 
-.titleDarkStory .letterStory::before, .titleDarkStory .letterStory::after {
-  content: "";
-  position: absolute;
-  width: 2px;
-  background: rgba(1, 0, 32, 0.7);
-  left: 50%;
-  transform: translateX(-50%);
-  animation: blood 4s infinite ease-in-out;
-}
-.titleDarkStory .letterStory::before {
-  height: 10px;
-  top: 50%;
-}
-.titleDarkStory .letterStory::after {
-  height: 6px;
-  top: 50%;
-  animation-delay: 0.8s;
-}
-  
-@keyframes blood {
-  0% {
-    height: 0;
-    opacity: 1;
-  }
-  50% {
-    height: 30px;
-    opacity: 0.8;
-  }
-  100% {
-    height: 0;
-    opacity: 0;
-    transform: translateY(50px);
-  }
+  margin-top: 5%;
+  margin-bottom: 5%;
+  letter-spacing: 1px;
 }
 
 @media (max-width: 768px) {
   .buttonStory{
-    border-radius: 20px;
     font-size: 1.8em;
     width: 80%;
     height: 5vh;
+  }
+  .story-button-init{
+    font-size: 2.8rem;
+  }
+  .container-story-input{
     margin-top: 10%;
+    width: 100%;
   }
   .avatar-face {
-    width: 30%;
+    width: 25%;
   }
-  .titleDarkStory {
-    font-size: 2.5em;
-  } 
 }

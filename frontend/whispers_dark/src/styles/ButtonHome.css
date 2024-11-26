@@ -1,19 +1,17 @@
 .container-buttonHome{
   text-align: center;
 }
-.container-buttonHome-button {
+.buttonHome-button {
   color: #010020;
   width: 200px;
   border-radius: 8px;
   background-color: #0541AF;
-  /* cursor: url(../assets/teeth.png), auto; */
-  /* margin-bottom: 50px; */
-  margin-top: -10%;
+  margin-top: .5%;
   border: none;
   cursor: pointer;
 }
 
-.container-buttonHome-text{
+.buttonHome-text{
   font-family: "Just Another Hand", cursive;
   font-weight: 400;
   font-style: normal;
@@ -21,11 +19,11 @@
 }
 /* Pantallas pequeñas (celulares) */
 @media (max-width: 768px) {
-  .container-buttonHome-button{
+  .buttonHome-button{
     margin-top: 10%;
     width: 50%;
   }
-  .container-buttonHome-text{
+  .buttonHome-text{
     font-size: 2rem;
   }
 }

@@ -3,57 +3,37 @@
   flex-direction: column;
   align-items: center;
 }
-label {
-  font-size: 3em;
-  color: #C869E7;
+.register-form label{
+  font-size: 2.5rem;
+  color: #458584;
+  margin-top: 2%;
 }
-#email, #password {
-  font-family: "Just Another Hand", cursive;
-  font-weight: 400;
-  font-style: normal;
-  width: 50%;
+.register-form input{
   border: none;
-  border-bottom: 2px solid #661D90;
+  border-bottom: 2px solid #345660;
   padding: 10px;
-  font-size: 2.5em;
+  font-size: 2rem;
   outline: none;
   background: transparent;
-  margin-bottom: 10%;
+  margin-bottom: 1.5%;
+  text-align: center;
 }
-#email:focus, #password:focus{
-  border-bottom: 4px solid #C869E7;
+.register-form input[value]{
+  color: #A7BA9A;
+  font-family: "Just Another Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5rem;
+}
+.register-form input:focus{
+  /* border-bottom: 4px solid #C869E7; */
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  background-color: #1A2F4C ;
+  background-color: #345660 ;
 }
-
-#email::placeholder, #password::placeholder {
-  color: #661D90;
+.register-form input::placeholder{
   text-align: center;
-  font-size: 1.2em;
+  font-size: 2rem;
   font-family: "Just Another Hand", cursive;
   font-weight: 400;
   font-style: normal;
-}
-input {
-  font-size: 28px;
-  text-align: center;
-}
-label {
-  font-family: "Just Another Hand", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* Pantallas pequeñas (celulares) */
-@media (max-width: 768px) {
-  #email::placeholder, #password::placeholder {
-    font-size: 0.8em;
-  } 
-  label {
-    font-size: 1.5em;
-    color: #C869E7;
-  }
-  #email, #password {
-    font-size: 1.4em;
-  }
 }

@@ -1,45 +1,85 @@
 .container-categories{
-  cursor: url(../assets/image_29.png), auto;
+  cursor: url(../assets/cursor.svg), auto;
 }
-.container-categories-iconMenu {
+.categories-icon{
   display: flex;
-  font-size: 3rem;
   color: #A7BA9A;
   margin-left: 20px;
   margin-bottom: 8%;
+  font-size: 3rem;
   cursor: pointer;
-  }
+  position: relative;
+}
+.menu-dropdown{
+  position: absolute;
+  display: flex;
+  bottom: 50%;
+  left: 4.5%;
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  z-index: 1;/*por encima del texto*/
+}
+.menu-dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+}
+.menu-dropdown li:not(:last-child) {
+  border-bottom: 2px solid white;
+  margin-bottom: 10px;
+}
+.menu-dropdown li:hover {
+  background-color: rgba(89, 95, 82, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+}
+.menu-dropdown a {
+  text-decoration: none;
+  color: #889DA2;
+}
 .container-categories-iconsOrder {
   color: #A7BA9A;
-  display: flex; /* Flexbox para alinear los íconos horizontalmente */
-  justify-content: space-between; /* Espacio igual entre los íconos */
-  align-items: center; /* Centra los íconos verticalmente */
-  font-size: 3rem; /* Ajusta el tamaño de los íconos */
-  width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
-  padding: 10px; /* Añade un poco de espacio alrededor de los íconos */
-  /* border: 1px solid #000; */
-  transform: translateY(-100%);
-  }
-.container-categories-iconsOrder > div {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin: 0 10px; /* Espaciado entre íconos */
-  position: relative; /* Necesario para agregar la línea divisoria */
+  width: 100%;
+  padding: 10px;
+  transform: translateY(-100%);
+  background-color: #3E565F;
+}
+.container-categories-iconsOrder > div {
+  margin: 0 10px;
+  position: relative; 
 }
 .container-categories-iconsOrder > div:not(:last-child)::after {
   content: "";
   position: absolute;
-  right: -30px; /* Ajusta la posición de la línea */
-  height: 100%; /* Altura de la línea */
-  width: 4px; /* Grosor de la línea */
-  background-color: #1F3F58; /* Color de la línea */
+  right: -100%; 
+  height: 100%;
+  width: 4px; 
+  background-color: #1F3F58; 
 } 
+.container-categories-iconsOrder1 select, .container-categories-iconsOrder2 select{
+  background-color: transparent;
+  border: none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+  border-radius: 6px;
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Just Another Hand", cursive;
+  color: #1A2F4C;
+  cursor: pointer;
+}
 /* Estilo para los íconos */
 .iconArrow, .iconFilter{
   color: #A7BA9A;
   display: flex;
   align-items: center;
-  font-size: 3rem; /* Ajusta el tamaño de los íconos si es necesario */
+  font-size: 3rem;
   cursor: pointer;  
 }
 .iconArrowText, .iconFilterText{
@@ -48,19 +88,17 @@
   font-weight: 400;
   font-style: normal;
 }
+.categories-option{
+  background-color: black;
+  color: #A7BA9A;
+}
 #iconSearch {
   color: #A7BA9A;
   text-decoration: none;
   margin-right: 30px;
   font-size: 2.5rem;
 }
-.categories-menu-list{
-  font-size: 38px;
-  margin-bottom: 10px;
-  margin-left: -80px;
-  margin-top: 20px;
-}
-.categories-option{
-  background-color: black;
-  color: #A7BA9A;
+.container-categories-iconsOrder3 span{
+  font-size: 3rem;
+  margin-right: 10px;
 }

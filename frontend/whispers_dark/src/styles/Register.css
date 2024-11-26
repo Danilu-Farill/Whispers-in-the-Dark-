@@ -1,30 +1,20 @@
 .container-register{
-  cursor: url(../assets/image_29.png), auto;
-}
-.container-register-button {
-  align-content: center;
+  cursor: url(../assets/cursor.svg), auto;
 }
 .register-button-init {
-  font-family: "Just Another Hand", cursive;
-  font-weight: 400;
-  font-style: normal;
-  color: #C869E7;
-  font-size: 4em;
+  font-size: 4rem;
   text-align: center;
+}
+.container-register-button p{
+  margin-top: .5%;
 }
 .register-button-opc {
-  font-family: "Just Another Hand", cursive;
-  font-weight: 400;
-  font-style: normal;
-  color: #661D90;
-  font-size: 2em;
+  color: #458584;
+  font-size: 2rem;
   text-align: center;
 }
-.container-register-form {
-  align-items: center;
-}
 .register-button-a {
-  color: #661D90;
+  color: #458584;
 }
 .buttonHomeLink{
   text-decoration: none;
@@ -32,6 +22,12 @@
 }
 
 @media (max-width: 768px) {
+  .register-button-init{
+    margin-top: -15%;
+  }
+  .container-register-form{
+    margin-top: 12%;
+  }
   .register-button-init {
     font-size: 2em;
   }

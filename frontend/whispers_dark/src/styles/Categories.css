@@ -1,7 +1,7 @@
 .container-categories-viewAll{
   position: relative;
   padding: auto;
-  margin-top: 100px;
+  /* margin-top: 100px; */
   margin-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
