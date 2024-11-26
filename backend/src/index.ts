@@ -5,7 +5,7 @@ import { testConnection } from "./connection";
 import { sequelize } from "./config/sequelize";
 import cors from 'cors';
 // import { User, UserExistingStory, NewStory, StoryExisting } from './models/index.model'
-// import './models/associations.model';
+import './models/associations.model';
 
 dotenv.config();
 const app: Application = express();
@@ -16,7 +16,6 @@ if (!frontendUrl || !backendUrl) {
   throw new Error('FRONTEND_URL o BACKEND_URL no estan definidos');
 }
 app.use(express.json());
-// app.use(cors());
 app.use(cors({
   origin: [frontendUrl, backendUrl, 'http://localhost:5173'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -24,14 +23,6 @@ app.use(cors({
   credentials: true,
 }));
 
-// const mongoURI = process.env.DB_URL;
-// if (!mongoURI) {
-//   throw new Error('DB_URL no está definido');
-// }
-
-// mongoose.connect(mongoURI)
-//   .then(() => console.log('MongoDB connected'))
-//   .catch((err: Error) => console.error('Connection error', err));
 router(app);
 
 app.get("/", (req: Request, resp: Response) => {

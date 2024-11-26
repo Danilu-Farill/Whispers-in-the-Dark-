@@ -9,22 +9,19 @@ import { Link } from "react-router-dom";
 export const Story = () => {
   const text = "¿Qué historia quieres leer hoy?";
   const [letters, setLetters] = useState<JSX.Element[]>([]);
+  const [inputValue, setInputValue] = useState("");
   useEffect (() => {
-    document.body.style.backgroundColor = '#1A1C17';
     window.history.pushState(null, "", window.location.href);
     window.history.replaceState(null, "", window.location.href);
     const letterElements = text.split("").map((letter, index) => {
       const isSpace = letter === " ";
       return(
-        <span key={index} className="letterStory">
+        <span key={index} className="letter">
           {isSpace ? '\u00A0' : letter}
         </span>
       );
     });
     setLetters(letterElements);
-    return() => {
-      document.body.style.backgroundColor = "";
-    };
   }, []);
   return(
     <>
@@ -39,10 +36,10 @@ export const Story = () => {
           <img src={avatar} alt="Avatar" className="avatar-face" />
         </div>
         <div className="container-story-text">
-          <p className="login-button-init titleDarkStory"> {letters} </p>
+          <p className="story-button-init titleDark"> {letters} </p>
         </div>
         <div className="container-story-input">
-          <input type="text" name="story" id="inputStory" />
+          <input type="text" name="story" id="inputStory" value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
         </div>
         <div className="container-story-button">
           <button type="button" className="buttonStory">CONTAR HISTORIA</button>
@@ -51,3 +48,5 @@ export const Story = () => {
     </>
   );
 };
+
+// agregar categoria

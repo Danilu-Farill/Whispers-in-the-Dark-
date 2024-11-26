@@ -107,25 +107,21 @@ export const getStoryCategory = async(req: Request, resp: Response): Promise<any
 //     }
 // }
 
-// export const putUser: RequestHandler = async(req:Request, resp:Response): Promise<any> => {
-//     try {
-//         const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-//         const email = req.params.email;
-//         const { password, description, username } = req.body;
-//         const findUser = await User.findOne({where: {email: email}});
-//         if (!findUser) {
-//             return resp.status(404).json("Usuario no encontrado");
-//         }
-//         if(!regexPassword.test(password)){
-//             return resp.status(400).json("Contraseña no válida. Debe tener al menos 8 caracteres, una letra mayúscula, una letra minúscula, un número y un carácter especial.");
-//         }
-//         const psw = await createHashValue(password);
-//         const updateUser = await User.update({password: psw, description, username}, {where:{email: email}});
-//         resp.status(200).json({message: "user update", psw, username, description});
-//     } catch (error) {
-//         resp.status(500).json("Error del servidor")
-//     }
-// }
+export const putStory: RequestHandler = async(req:Request, resp:Response): Promise<any> => {
+  try {
+    //id_existing, title, description, "imageUrl", category
+    const {id_existing} = req.params;
+    const { title, description, imageUrl, category } = req.body;
+    const findUser = await StoryExisting.findOne({where: {id_existing: id_existing}});
+    if (!findUser) {
+      return resp.status(404).json("Historia no encontrada");
+    }
+    const updateUser = await StoryExisting.update({title, description, imageUrl, category}, {where:{id_existing: id_existing}});
+    resp.status(200).json({message: "user update", updateUser});
+  } catch (error) {
+    resp.status(500).json({message: "Error del servidor", error});
+  }
+};
 
 // export const deleteUser: RequestHandler = async(req:Request, resp:Response): Promise<any> => {
 //     try {

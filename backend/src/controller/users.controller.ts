@@ -1,7 +1,9 @@
 import { Request, Response, RequestHandler } from "express";
 import User from "../models/users.model";
+//import { genSalt, hash, compare } from 'bcryptjs';
 // import bcrypt from 'bcrypt';
-const bcrypt = require("bcryptjs");
+import * as bcrypt from 'bcryptjs';
+// const bcrypt = require("bcryptjs");
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config();
