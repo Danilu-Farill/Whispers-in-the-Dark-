@@ -18,8 +18,9 @@ export const useRegisterConnection = () => {
         throw new Error(errorData.message);
       }
       const data = await response.json();
-      localStorage.setItem("username", data.email);
       navigate("/login");
+      // localStorage.setItem("username", data.email);
+      return data;
     }
     catch (error) {
       const errorMessage = error instanceof Error ? error.message : "Error inesperado";
@@ -84,7 +85,6 @@ export const useRegisterConnection = (): RegisterHook => {
       }
 
       const data = await response.json();
-      
       // Almacenar información del usuario de manera segura
       localStorage.setItem("user", JSON.stringify({
         email: data.email,
@@ -95,12 +95,12 @@ export const useRegisterConnection = (): RegisterHook => {
       navigate("/login");
     } catch (error) {
       // Manejo de errores sin usar console.log
-      const errorMessage = error instanceof Error 
-        ? error.message 
+      const errorMessage = error instanceof Error
+        ? error.message
         : "Error inesperado durante el registro";
-      
+
       setError(errorMessage);
-      
+
       // Opcional: enviar error a un servicio de monitoreo
       // logErrorToMonitoringService(errorMessage);
     } finally {

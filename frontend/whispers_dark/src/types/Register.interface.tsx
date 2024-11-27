@@ -11,6 +11,12 @@ export interface IRegisterProps {
   onCreate: () => void;
 }
 
+// export interface IRegisterProps {
+//   email: string;
+//   password: string;
+// }
+
+
 export interface ILoginProps {
   email: string;
   password: string;

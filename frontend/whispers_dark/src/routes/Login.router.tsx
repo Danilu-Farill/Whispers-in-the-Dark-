@@ -5,7 +5,7 @@ export const useLoginConnection = () => {
   const navigate = useNavigate();
   const loginUser = async({email, password}: IUser) => {
     try {
-      const response = await fetch(`https://whispers-in-the-dark.onrender.com/home/login`, {
+      const response = await fetch(`https://whispers-in-the-dark.onrender.com/home/auth/`, {
         method: "POST",
         // mode: 'cors',
         headers: {
@@ -19,13 +19,17 @@ export const useLoginConnection = () => {
         throw new Error(errorData.message);
       }
       const data = await response.json();
+      const token = data.tokenUser;
       console.log("🚀 ~ loginConnection ~ data:", data);
       console.log("🚀 ~ loginConnection ~ data:email", data.email);
       localStorage.setItem("username", data.email);
+      localStorage.setItem("token", token);
       navigate("/principal");
     }
     catch (error) {
-      console.error("Error al registrar al usuario", error);
+      console.log("🚀 ~ loginUser ~ error:", error);
+      const errorMessage = error instanceof Error? error.message : "Error inesperado";
+      throw new Error(errorMessage);
     }
   };
   return { loginUser };

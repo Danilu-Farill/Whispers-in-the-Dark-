@@ -17,11 +17,11 @@ export const Story = () => {
       const isSpace = letter === " ";
       return(
         <span key={index} className="letter">
-          {isSpace ? '\u00A0' : letter}
+          {isSpace ? '\u00A0' : letter} {/* Renderizamos &nbsp; para el espacio */}
         </span>
       );
     });
-    setLetters(letterElements);
+    setLetters(letterElements); // Guardamos los spans como elementos JSX
   }, []);
   return(
     <>

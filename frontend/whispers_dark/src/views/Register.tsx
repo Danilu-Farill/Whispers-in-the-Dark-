@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { Header } from "../components/Header";
-import { ButtonHome } from "../components/ButtonHome";
 import './../styles/Register.css';
 import './../styles/LetterBlood.css';
-import { Form } from "../components/Form";
 import { Link } from "react-router-dom";
 import { useRegisterConnection } from "../services/Register.router";
 
@@ -30,6 +28,10 @@ export const Register = () => {
     console.log("datos enviados:", email, password);
     await registerUser({email, password});
   };
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    hadleCreate();
+  };
   return(
     <>
       <div className="container-register">
@@ -38,17 +40,18 @@ export const Register = () => {
         </div>
         <p className="register-button-init titleDark"> {letters} </p>
         <div className="container-register-form">
-          <Form
-            email={email}
-            password={password}
-            setEmail={setEmail}
-            setPassword={setPassword}
-            onCreate={hadleCreate}
-          />
-        </div>
-        <div className="container-register-button">
-          <ButtonHome onCreate={hadleCreate} > CREAR CUENTA </ButtonHome>
-          <p className="register-button-opc"> ¿Ya tienes una cuenta?<Link to='/login' className="register-button-a">Inicia sesión</Link></p>
+          <form action="register" className='register-form' onSubmit={handleFormSubmit}>
+            <label htmlFor="email">CORREO ELECTRÓNICO</label>
+            <input type="text" placeholder='Ingresa tu email' name='email' id='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+            <label htmlFor="password">CONTRASEÑA</label>
+            <input type="password" placeholder='Ingresa tu contraseña' name='password' id='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
+            <div className='container-buttonHome'>
+              <button className='buttonHome-button' type='submit'>
+                <span className='buttonHome-text'>CREAR CUENTA</span>
+              </button>
+              <p className="register-button-opc"> ¿Ya tienes una cuenta?<Link to='/login' className="register-button-a">Inicia sesión</Link></p>
+            </div>
+          </form>
         </div>
       </div>
     </>
