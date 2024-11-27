@@ -5,7 +5,7 @@ export const useRegisterConnection = () => {
   const navigate = useNavigate();
   const registerUser = async({email, password}: IUser) => {
     try {
-      const response = await fetch(`https://whispers-in-the-dark.onrender.com/home/users/create`, {
+      const response = await fetch(`http://whispers-in-the-dark.onrender.com/home/users/create`, {
         method: "POST",
         // mode: 'cors',
         headers: {
