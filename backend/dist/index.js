@@ -21,7 +21,7 @@ if (!frontendUrl || !backendUrl) {
 }
 app.use(express_1.default.json());
 app.use((0, cors_1.default)({
-    origin: [frontendUrl, backendUrl, 'http://localhost:5173'],
+    origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
