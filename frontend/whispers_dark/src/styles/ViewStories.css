@@ -4,7 +4,12 @@
   margin: 4%;
   text-align: center;
 }
-
+.viewstories-loaders {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
 .story-details-description{
   color: #A7BA9A;
   font-size: 2em;

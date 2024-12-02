@@ -1,11 +1,10 @@
 .container-categories-viewAll{
   position: relative;
   padding: auto;
-  /* margin-top: 100px; */
   margin-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
-  gap: 150px; 
+  gap: 80px; 
   justify-content: center;
 }
 .container-categories-cards{

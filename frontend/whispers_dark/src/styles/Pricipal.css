@@ -50,6 +50,12 @@
   text-align: center;
   cursor: pointer;
 }
+.pricipal-titleli{
+  list-style: square;
+  font-size: 2.5rem;
+  color: #A7BA9A;
+  letter-spacing: 2px;
+}
 
 /* Pantallas pequeñas (celulares) */
 @media (max-width: 768px) {

@@ -5,34 +5,21 @@ import { Header } from "../components/Header";
 import '../styles/Search.css';
 import { TitleHeader } from "../components/Title";
 import { Link, useNavigate } from "react-router-dom";
-import { useSearchConnection } from "../routes/Search.router";
+import { useSearchConnection } from "../services/Search.router";
 import { IStory } from "../types/Register.interface";
-import StoryCard from "../components/StoryCard";
+import StoryCard from "../components/StoryCardSearch";
 
 export const Search = () => {
   const navigate = useNavigate();
   const [ title, useTitle] = useState('');
-  const { searchStory} = useSearchConnection();
+  const { searchStory } = useSearchConnection();
   const [stories, setStories] = useState<IStory[]>([]); // Aquí se guardarán las historias
+
   useEffect(() => {
     window.history.pushState(   null, "", window.location.href);
     window.history.replaceState(null, "", window.location.href);
-    document.body.style.backgroundColor ="#1A2F4C";
-    // const handleSearch = () => {
-    //     // Simulación de búsqueda (puedes cambiar esto para obtener los datos reales)
-    //     const searchResults = ["Vampires at Night, vampiros de la noche", "The Haunted Forest", "Ghostly Apparitions", "Vampires at Night", "The Haunted Forest", "Ghostly Apparitions", "Vampires at Night", "The Haunted Forest", "Ghostly Apparitions", "Vampires at Night", "The Haunted Forest", "Ghostly Apparitions", "estamos muertos"];
-    //     setStories(searchResults); // Aquí actualizas el estado con las historias encontradas
-    // };
-    // handleSearch(); // Llama a la función al cargar la página
-    return() => {
-      document.body.style.backgroundColor = "";
-    };
   }, []);
-  //   const handleSearch = () => {
-  //     // Simulación de búsqueda (puedes cambiar esto para obtener los datos reales)
-  //     const foundStories = ["Vampires at Night, vampiros de la noche", "The Haunted Forest", "Ghostly Apparitions", "Vampires at Night", "The Haunted Forest", "Ghostly Apparitions", "Vampires at Night", "The Haunted Forest", "Ghostly Apparitions", "Vampires at Night", "The Haunted Forest", "Ghostly Apparitions", "estamos muertos"];
-  //     setStories(foundStories); // Aquí actualizas el estado con las historias encontradas
-  // };
+
   const handleSearchNavigator = async() => {
     const foundStories = await searchStory(title); // Buscar historias basadas en el título
     setStories(foundStories); // Actualizar el estado con las historias encontradas
@@ -43,7 +30,7 @@ export const Search = () => {
         <div>
           <Header/>
         </div>
-        <div>
+        <div className="container-search-title">
           <TitleHeader/>
         </div>
         <div className="container-search">
@@ -55,7 +42,7 @@ export const Search = () => {
         </div>
         <div className="container-stories">
           {stories.map((story, index) =>(
-            <div className="story-card">
+            <div className="story-card-search">
               <StoryCard
                 key={index}
                 title={story.title}

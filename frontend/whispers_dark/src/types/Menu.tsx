@@ -17,8 +17,10 @@ export interface StoryCardProps {
   title: string;
   description?: string;
   imageUrl?: string;
+  category?: string;
   // onClick: () => void;
 }
+
 export interface StoryCardPropsSearch {
   title: string;
   description?: string;

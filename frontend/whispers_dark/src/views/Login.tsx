@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Header } from "../components/Header";
 import { ButtonHome } from "../components/ButtonHome";
 import { Form } from "../components/Form";
-import { useLoginConnection } from "../routes/Login.router";
+import { useLoginConnection } from "../services/Login.router";
 import avatar from '../assets/face.png';
 import './../styles/Login.css';
 
@@ -24,7 +24,6 @@ export const Login = () => {
     setLetters(letterElements);
   }, []);
   const hadleLogin = async() => {
-    console.log( "datos comparados:", email, password);
     await loginUser({ email, password });
   };
   return(

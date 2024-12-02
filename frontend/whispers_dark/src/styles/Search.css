@@ -8,51 +8,44 @@
   justify-content: center;
   align-items: center;
 }
-#search {
+.container-search input{
   font-family: "Just Another Hand", cursive;
   font-weight: 400;
   font-style: normal;
-  width: 40%;
-  background-color: #345660;
-  padding: 4px;
-  font-size: 2.5rem;
-}
-#searchButton {
-  font-family: "Just Another Hand", cursive;
-  font-weight: 400;
-  font-style: normal;
-  padding: 10px 20px;
   background-color: #345660;
   color: #A7BA9A;
-  border: none;
+  font-size: 2.5rem;
   cursor: pointer;
-  font-size: 200%;
+}
+#search {
+  width: 40%;
+  padding: 3px;
+}
+#searchButton {
+  padding: 10px 20px;
+  border: none;
+  font-size: 195%;
+  margin-left: 10px;
 }
 /* Contenedor principal de las historias */
 .container-stories {
-  padding-left: 302px;
-  padding-right: 300px;
-  margin-top: 80px;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 2%;
   display: flex;
   flex-wrap: wrap;
   gap: 20px; 
   justify-content: center;
 }
 /* Estilo para cada tarjeta de historia */
-.story-card {
-  position: relative;
+.story-card-search {
   background-color: #1F3F58;
   color: #A7BA9A;
   padding: 20px;
-  width: 100%; /* Tamaño fijo para las tarjetas */
+  width: 30%; /* Tamaño fijo para las tarjetas */
   border-radius: 10px;
   text-align: center;
   cursor: pointer;
-}
-.story-card-image{
-  width: 500px;
-  height: 500px;
-  object-fit: cover;
 }
 .iconArrowLeft{
   /* transform: translateX(-730px); */
@@ -61,4 +54,37 @@
   margin-left: 10PX;
 }
 
+.container-cards-search{
+  /* background-color: #A7BA9A; */
+  width: 100%;
+}
+
+/* Pantallas pequeñas (celulares) */
+@media (min-width: 320px) and (max-width: 608px) {
+  .container-search-title{
+    margin-top: -20%;
+  }
+  .container-search input{
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  #search {
+    width: 60%;
+  }
+  #searchButton {
+    padding: 5px 10px;
+  }
+  .container-stories {
+    margin-top: 5%;
+    gap: 10px; 
+  }
+  .story-card-search{
+    padding: 10px;
+    width: 70%; /* Tamaño fijo para las tarjetas */
+  }
+  .container-stories h2{
+    font-size: 1.5rem;
+  }
+  
+}
 

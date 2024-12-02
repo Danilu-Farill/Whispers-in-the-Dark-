@@ -5,11 +5,14 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import avatar from '../assets/face.png';
 import '../styles/Story.css';
 import { Link } from "react-router-dom";
+import { Modal } from "../components/Modal.component";
+import kiki from '../assets/kiki.png';
 
 export const Story = () => {
   const text = "¿Qué historia quieres leer hoy?";
   const [letters, setLetters] = useState<JSX.Element[]>([]);
   const [inputValue, setInputValue] = useState("");
+  const [modalIsOpen, setIsModalOpen] = useState(false);
   useEffect (() => {
     window.history.pushState(null, "", window.location.href);
     window.history.replaceState(null, "", window.location.href);
@@ -23,9 +26,15 @@ export const Story = () => {
     });
     setLetters(letterElements); // Guardamos los spans como elementos JSX
   }, []);
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleClose = () => {
+    setIsModalOpen(false);
+  };
   return(
     <>
-      <div>
+      <div className="container-story">
         <div>
           <Header/>
         </div>
@@ -39,10 +48,19 @@ export const Story = () => {
           <p className="story-button-init titleDark"> {letters} </p>
         </div>
         <div className="container-story-input">
-          <input type="text" name="story" id="inputStory" value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
+          <label htmlFor="inputStory">Escribe la categoria de la historia aquí:</label>
+          <input type="text" name="story" id="inputStory" value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder="Zombies, Brujas, Hombres lobo"/>
         </div>
         <div className="container-story-button">
-          <button type="button" className="buttonStory">CONTAR HISTORIA</button>
+          <button type="button" className="buttonStory" onClick={handleOpenModal}>CONTAR HISTORIA</button>
+          {modalIsOpen && (
+            <Modal>
+              <h1>Titulo</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolore optio, quaerat obcaecati beatae odio, cum similique iure error reprehenderit facere fuga eligendi natus recusandae velit ex ducimus dolorum. Obcaecati.</p>
+              <img src={kiki} alt=""  width="300px" height="300px"/>
+              <button onClick={handleClose} className="modalQuiz-button">Cerrar</button>
+            </Modal>
+          )}
         </div>
       </div>
     </>

@@ -4,8 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import '../styles/ViewStories.css';
 import { useParams, Link } from "react-router-dom";
-import { usePrincipalConnection } from "../routes/principal.router";
+import { usePrincipalConnection } from "../services/principal.router";
 import { StoryCardProps } from "../types/Menu";
+import { Loaders } from "../components/Loaders";
 
 export const ViewStories = () => {
   const { title } = useParams<{ title: string }>();
@@ -26,7 +27,7 @@ export const ViewStories = () => {
     };
   }, [title]);
   if (!story) {
-    return <p>Cargando...</p>;
+    return <div className="flex w-full h-full items-center justify-center viewstories-loaders"><Loaders/></div>;
   }
   return(
     <>

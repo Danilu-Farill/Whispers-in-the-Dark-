@@ -1,111 +1,81 @@
 import { Request, Response, RequestHandler } from "express";
-import NewStory from "../models/newStorys.model";
-import User from "../models/users.model";
+import { createNewStory, findIdStory, findNewStories, removeNewStory, updateNewStory } from "../service/newStories.service";
 
-export const createNewStory: RequestHandler = async(req:Request, resp:Response): Promise<any> => {
-  try {//email params para que se cree en base al email del usuario
-    const { email } = req.params;
+export const postNewStory: RequestHandler = async(req:Request, resp:Response): Promise<any> => {
+  try {
+    const { id_user } = req.params;
+    if (!id_user) {
+      return resp.status(400).json({ message: "El id del usuario es obligatorio" });
+    };
+    const idNumber: number = parseInt(id_user, 10);
     const { title, description, imageUrl, category } = req.body;
-    if (!title || !description || !imageUrl || !category) {
-      return resp.status(400).json("Todos los campos son obligatorios");
-    }
-    const findEmailUser = await User.findOne({ where: {email:email}});
-    if (!findEmailUser) {
-      return resp.status(404).json("No se encontró usuario con el email");
-    }
-    const id_user = findEmailUser.id_user; // Obten el id_user
-    const existingTitle = await NewStory.findOne({ where: { title } });
-    if (existingTitle) {
-      return resp.status(400).json("Título de la historia ya existe");
-    }
-    const story = await NewStory.create({title, description, imageUrl, category, id_user});
-    console.log("🚀 ~ constcreateNewStory:RequestHandler=async ~ story:", story);
-    resp.status(201).json({ message: "Historia creada con éxito"});
+    const story = await createNewStory(idNumber, title, description, imageUrl, category);
+    return resp.status(201).json({ message: "Historia creada con éxito", story});
   } catch (error) {
-    console.log("🚀 ~ constcreateNewStory:RequestHandler=async ~ error:", error);
-    resp.status(500).json("Error del servidor");
+    if (error instanceof Error) {
+      return resp.status(400).json({ message: error.message });
+    }
+    return resp.status(500).json("Error del servidor");
   }
-};
+}; //EL USUARIO PUEDE CREAR LA HISTORIA Y SE AGRAGA
 
 export const getNewStories = async(req:Request, resp:Response): Promise<any> => {
   try {
-    const newStories = await NewStory.findAll();
+    const newStories = await findNewStories();
     return resp.status(200).json({ message: "Todas las historias mas recientes", newStories });
   } catch (error) {
-    console.log("🚀 ~ getNewStories ~ error:", error);
-    return resp.status(500).json("Error del servidor");
-  }
-};
-
-export const getIdNewStories = async(req:Request, resp:Response): Promise<any> => {//buscar por id de la historia
-  try {//buscar por categoria
-    return resp.status(200).json({ message: "Historias mas recientes"});
-  } catch (error) {
-    console.log("🚀 ~ getNewStories ~ error:", error);
-    return resp.status(500).json("Error del servidor");
-  }
-};
-
-export const getNewStoryCategory = async(req:Request, resp:Response): Promise<any> => {//buscar por category en query
-  try {//buscar por categoria
-    const { category } = req.query;
-    const {email} = req.params;
-    if (!category) {
-      return resp.status(400).json({ message: "Falta el parámetro de consulta" });
+    if(error instanceof Error){
+      return resp.status(400).json({ message: error.message });
     }
-    const findEmailUser = await User.findOne({ where: {email:email}});
-    if (!findEmailUser) {
-      return resp.status(404).json("No se encontró el email");
-    }
-    const id_user = findEmailUser.id_user; // Obten el id_use
-    console.log("id_user:", id_user);
-    console.log("email:", email);
-    console.log("category:", category);
-    const findNewStoryCategory = await NewStory.findAll({where: {id_user, category: category}});
-
-    if (!findNewStoryCategory.length) {
-      return resp.status(404).json({ message: "No se encontraron historias con la categoría especificada" });
-    }
-    return resp.status(200).json({ message: "Historias mas recientes", findNewStoryCategory});
-  } catch (error) {
-    console.log("🚀 ~ getNewStories ~ error:", error);
     return resp.status(500).json("Error del servidor");
   }
 };
 
-export const getNewStoryOrder = async(req:Request, resp:Response): Promise<any> => {//buscar por category en query
-  try {//buscar por categoria
-    const findOrder = await NewStory.findAll({
-      order: [
-        ['title', 'ASC'],
-        // ['category', 'DESC'],
-      ],
-    });
-    return resp.status(200).json({ message: "Historias ordenadas", findOrder});
-  } catch (error) {
-    console.log("🚀 ~ getNewStoryOrder ~ error:", error);
-    return resp.status(500).json("Error del servidor");
-  }
-};
-
-
-export const putNewStories = async(req:Request, resp:Response): Promise<any> => {
+export const getIdUser: RequestHandler = async(req:Request, resp:Response): Promise<any> => {
   try {
-    return resp.status(200).json({ message: "Historias mas recientes"});
+      const id = req.params.id_newStory;
+      if(!id){
+          return resp.status(400).json("Id es requerido");
+      }
+      const idNumber = parseInt(id, 10);
+      const findUser = await findIdStory(idNumber);
+      resp.status(200).json(findUser);
   } catch (error) {
-    console.log("🚀 ~ putNewStories ~ error:", error);
-    return resp.status(500).json("Error del servidor");
+      resp.status(500).json("Error del servidor")
   }
-};
+}//buscar historias por id
 
-export const deleteNewStories = async(req:Request, resp:Response): Promise<any> => {
+export const putNewStory: RequestHandler = async(req:Request, resp:Response): Promise<any> => {
   try {
-    return resp.status(200).json({ message: "Historias mas recientes"});
+    const {id_newStory} = req.params;
+    if(!id_newStory){
+      return resp.status(400).json("Id es requerido");
+    }
+    const idNumber = parseInt(id_newStory, 10);
+    const { title, description, imageUrl, category } = req.body;
+    const updateUser = await updateNewStory(idNumber, title, description, imageUrl, category);
+    resp.status(200).json({message: "user update", updateUser});
   } catch (error) {
-    console.log("🚀 ~ deleteNewStories ~ error:", error);
-    return resp.status(500).json("Error del servidor");
+    if (error instanceof Error) {
+      return resp.status(400).json({ message: error.message });
+    }
+    resp.status(500).json({message: "Error del servidor", error});
   }
 };
 
-//buscar por categoria
-//crear una vista para que el usuario pueda crear su historia, debe llevar titulo, descripcion, imagen generada, categoriade las existentes
+export const deleteNewStory: RequestHandler = async(req:Request, resp:Response): Promise<any> => {
+  try {
+    const id = req.params.id_newStory;
+    if(!id){
+      return resp.status(400).json("Id es requerido");
+    }
+    const idNumber = parseInt(id, 10);
+      const user = await removeNewStory(idNumber);
+     return resp.status(200).json({message: "Usuario eliminado"});
+  } catch (error) {
+    if (error instanceof Error) {
+      return resp.status(400).json({ message: error.message });
+    }
+    return resp.status(500).json("Error del servidor")
+  }
+}

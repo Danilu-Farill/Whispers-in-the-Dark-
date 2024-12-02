@@ -17,7 +17,7 @@ const App: React.FC = () => {
         <Route path='/' element={<div className='body-home'><Home/></div>}/>
         <Route path='/register' element={<div className='body-register'><Register/> </div>}/>
         <Route path='/login' element={<div className='body-register'><Login/> </div>}/>
-        <Route path='/principal' element={<Principal/>}/>
+        <Route path='/principal' element={<div className='body-principal'><Principal/> </div>}/>
         <Route path='/category' element={<div className='body-register'><Categories/> </div>}/>
         <Route path='/search' element={<div className='body-register'><Search/> </div>}/>
         <Route path='/story' element={<div className='body-register'><Story/> </div>}/>

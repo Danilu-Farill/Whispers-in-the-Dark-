@@ -1,3 +1,6 @@
+.container-story{
+  cursor: url(../assets/cursor.svg), auto;
+}
 .icon-close{
   display: flex;
   margin-left: 2%;
@@ -28,6 +31,18 @@
 .container-story-input{
   margin-top: 1%;
   text-align: center;
+  cursor: pointer;
+}
+.container-story-input label{
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  color: #458584;
+  margin-top: 2%;
+  margin-bottom: -1%;
+}
+.container-story-input input{
+  text-transform: capitalize;
 }
 .container-story-input input[value]{
   color: #A7BA9A;
@@ -42,13 +57,16 @@
   border: none;
   margin-top: 2%;
   text-align: center;
+  cursor: pointer;
+  position: relative;
 }
 .container-story-button{
   text-align: center;
   margin-top: -2%;
 }
 .container-story-button button{
-  height: 8vh;
+  width: 30%;
+  cursor: pointer;
 }
 .buttonStory{
   border-radius: 15px;
@@ -65,14 +83,25 @@
   letter-spacing: 1px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 320px) and (max-width: 608px) {
+  #inputStory { 
+    font-size: 2rem;
+    width: 80%;
+    margin-top: 2%;
+  }
+  .icon-close{
+    margin-left: 2%;
+    margin-top: -25%;
+    cursor: pointer;
+    position: relative;
+  }
   .buttonStory{
     font-size: 1.8em;
     width: 80%;
     height: 5vh;
   }
   .story-button-init{
-    font-size: 2.8rem;
+    font-size: 2.5rem;
   }
   .container-story-input{
     margin-top: 10%;
@@ -80,5 +109,10 @@
   }
   .avatar-face {
     width: 25%;
+    position: relative;
+    margin-top: -15%;
+  }
+  .container-story-button button{
+    width: 80%;
   }
 }

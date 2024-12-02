@@ -1,0 +1,52 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #1A2F4C;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-height: 80vh;
+  width: 100%;
+  overflow-y: auto;
+  /* justify-content: space-between; */
+  text-align: justify;
+  align-items: center;
+}
+.modal-content button {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.modal-content h1{
+  color: #458584;
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+.modal-content p{
+  color: #458584;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+.modalQuiz-button{
+  background-color: #2B6566;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #1A2F4C;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+}
