@@ -19,7 +19,7 @@ export const useLoginConnection = () => {
         throw new Error(errorData.message);
       }
       const data = await response.json();
-      const token = data.tokenUser;
+      const token = data.token;
       localStorage.setItem("username", data.email);
       localStorage.setItem("token", token);
       navigate("/principal");

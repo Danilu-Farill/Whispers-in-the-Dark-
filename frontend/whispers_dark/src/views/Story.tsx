@@ -7,12 +7,16 @@ import '../styles/Story.css';
 import { Link } from "react-router-dom";
 import { Modal } from "../components/Modal.component";
 import kiki from '../assets/kiki.png';
+import { useGeminiConnection } from "../services/Story";
 
 export const Story = () => {
+  const [newStory, setNewStory] = useState("");
+  const { newStoryApi } = useGeminiConnection();
   const text = "¿Qué historia quieres leer hoy?";
   const [letters, setLetters] = useState<JSX.Element[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [modalIsOpen, setIsModalOpen] = useState(false);
+  const token = localStorage.getItem("token");
   useEffect (() => {
     window.history.pushState(null, "", window.location.href);
     window.history.replaceState(null, "", window.location.href);
@@ -26,7 +30,9 @@ export const Story = () => {
     });
     setLetters(letterElements); // Guardamos los spans como elementos JSX
   }, []);
-  const handleOpenModal = () => {
+
+  const handleOpenModal = async() => {
+    // const data = await newStoryApi(token);
     setIsModalOpen(true);
   };
   const handleClose = () => {
@@ -56,7 +62,7 @@ export const Story = () => {
           {modalIsOpen && (
             <Modal>
               <h1>Titulo</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolore optio, quaerat obcaecati beatae odio, cum similique iure error reprehenderit facere fuga eligendi natus recusandae velit ex ducimus dolorum. Obcaecati.</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
               <img src={kiki} alt=""  width="300px" height="300px"/>
               <button onClick={handleClose} className="modalQuiz-button">Cerrar</button>
             </Modal>

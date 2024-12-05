@@ -10,7 +10,7 @@ import { Modal } from '../components/Modal.component';
 
 export const Principal = () => {
   const [categories, setCategories] = useState<string[]>([]);
-  const [storiesCategory, setStoryCategory] = useState<string[]>([]);
+  const [storiesCategory, setStoryCategory] = useState<{title:string}[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const { categoriesApi, storiesCategoryApi } = usePrincipalConnection();
   useEffect(() => {

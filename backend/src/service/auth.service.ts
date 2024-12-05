@@ -27,7 +27,7 @@ export const tokenUser = async(email: string, password: string) => {
       if (!process.env.JWT_SECRET) {
         throw new Error ("Variable de entorno JWT_SECRET no configurada");
       }
-      const token = jwt.sign({id: loginUser.id_user, email}, process.env.JWT_SECRET);
+      const token = jwt.sign({id: loginUser.id_user}, process.env.JWT_SECRET);
       return token;
 };
 

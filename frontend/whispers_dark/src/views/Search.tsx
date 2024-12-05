@@ -11,7 +11,7 @@ import StoryCard from "../components/StoryCardSearch";
 
 export const Search = () => {
   const navigate = useNavigate();
-  const [ title, useTitle] = useState('');
+  const [ title, setTitle] = useState('');
   const { searchStory } = useSearchConnection();
   const [stories, setStories] = useState<IStory[]>([]); // Aquí se guardarán las historias
 
@@ -34,7 +34,7 @@ export const Search = () => {
           <TitleHeader/>
         </div>
         <div className="container-search">
-          <input type="text" name="search" id="search" onChange={(e) => useTitle(e.target.value)} placeholder="Buscar por título" />
+          <input type="text" name="search" id="search" onChange={(e) => setTitle(e.target.value)} placeholder="Buscar por título" />
           <input type="button" value="Buscar" id="searchButton"
             title={title}
             onClick={handleSearchNavigator}
